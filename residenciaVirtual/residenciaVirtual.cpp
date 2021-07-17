@@ -243,6 +243,7 @@ int main()
 	Model edificio("resources/objects/Edificio/Edificio.obj");
 	Model tienda("resources/objects/Tienda/Tienda.obj");
 	Model glorieta("resources/objects/Glorieta/Glorieta.obj");
+	Model montana("resources/objects/Montana/Montana.obj");
 
 	//--------------------------------------------------------------------------------------------------------------------------
 	//Inicializacion de KeyFrames
@@ -419,6 +420,13 @@ int main()
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		glorieta.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-700.0f, 0.0f, -700.0f));
+		model = glm::rotate(model, glm::radians(135.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(10.0f, 10.0f, 10.0f));
+		staticShader.setMat4("model", model);
+		montana.Draw(staticShader);
 
 		//Caja Transparente
 		/*glEnable(GL_BLEND);
