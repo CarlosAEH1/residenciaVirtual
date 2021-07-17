@@ -285,13 +285,15 @@ int main()
 
 		// don't forget to enable shader before setting uniforms
 		staticShader.use();
-		//Setup Advanced Lights
+
+		//Fuente de luz direccional (Sol)
 		staticShader.setVec3("viewPos", camera.Position);
 		staticShader.setVec3("dirLight.direction", lightDirection);
-		staticShader.setVec3("dirLight.ambient", glm::vec3(1.0f, 1.0f, 1.0f));
-		staticShader.setVec3("dirLight.diffuse", glm::vec3(0.0f, 0.0f, 0.0f));
-		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setVec3("dirLight.ambient", glm::vec3(0.0f, 0.0f, 0.4f));
+		staticShader.setVec3("dirLight.diffuse", glm::vec3(1.0f, 0.8f, 0.8f));
+		staticShader.setVec3("dirLight.specular", glm::vec3(1.0f, 0.0f, 0.0f));
 
+		//Fuente de luz posicional
 		staticShader.setVec3("pointLight[0].position", lightPosition);
 		staticShader.setVec3("pointLight[0].ambient", glm::vec3(0.0f, 0.0f, 0.0f));
 		staticShader.setVec3("pointLight[0].diffuse", glm::vec3(0.0f, 0.0f, 0.0f));
