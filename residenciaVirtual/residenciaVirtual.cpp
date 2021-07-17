@@ -242,6 +242,7 @@ int main()
 	Model piso("resources/objects/piso/piso.obj");
 	Model edificio("resources/objects/Edificio/Edificio.obj");
 	Model tienda("resources/objects/Tienda/Tienda.obj");
+	Model glorieta("resources/objects/Glorieta/Glorieta.obj");
 
 	//--------------------------------------------------------------------------------------------------------------------------
 	//Inicializacion de KeyFrames
@@ -412,6 +413,12 @@ int main()
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		tienda.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-300.0f, 0.0f, 300.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		glorieta.Draw(staticShader);
 
 		//Caja Transparente
 		/*glEnable(GL_BLEND);
