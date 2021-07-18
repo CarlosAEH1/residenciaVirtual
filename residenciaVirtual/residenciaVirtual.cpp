@@ -59,7 +59,7 @@ double	deltaTime = 0.0f,
 
 //Lighting
 glm::vec3 lightPosition(0.0f, 4.0f, -10.0f);
-glm::vec3 lightDirection(0.0f, -1.0f, -1.0f);
+glm::vec3 lightDirection(0.5f, -0.2f, -1.0f);
 
 // posiciones
 //float x = 0.0f;
@@ -242,6 +242,7 @@ int main()
 	Model piso("resources/objects/piso/piso.obj");
 	Model edificio("resources/objects/Edificio/Edificio.obj");
 	Model tienda("resources/objects/Tienda/Tienda.obj");
+	Model comedor("resources/objects/Comedor/Comedor.obj");
 	Model glorieta("resources/objects/Glorieta/Glorieta.obj");
 	Model montana("resources/objects/Montana/Montana.obj");
 	Model banqueta("resources/objects/Banqueta/Banqueta.obj");
@@ -410,6 +411,18 @@ int main()
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		tienda.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(227.0f, 0.0f, 210.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		comedor.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(227.0f, 0.0f, 311.5f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		comedor.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-300.0f, 0.0f, 300.0f));
