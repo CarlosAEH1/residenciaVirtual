@@ -244,6 +244,8 @@ int main()
 	Model tienda("resources/objects/Tienda/Tienda.obj");
 	Model glorieta("resources/objects/Glorieta/Glorieta.obj");
 	Model montana("resources/objects/Montana/Montana.obj");
+	Model banqueta("resources/objects/Banqueta/Banqueta.obj");
+	Model circuito("resources/objects/Circuito/Circuito.obj");
 
 	//--------------------------------------------------------------------------------------------------------------------------
 	//Inicializacion de KeyFrames
@@ -404,13 +406,7 @@ int main()
 		edificio.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(300.0f, 0.0f, 300.0f));
-		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		staticShader.setMat4("model", model);
-		tienda.Draw(staticShader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(300.0f, 0.0f, 210.0f));
+		model = glm::translate(model, glm::vec3(304.5f, 0.0f, 260.0f));
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		tienda.Draw(staticShader);
@@ -427,6 +423,12 @@ int main()
 		model = glm::scale(model, glm::vec3(10.0f, 10.0f, 10.0f));
 		staticShader.setMat4("model", model);
 		montana.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(262.5f, 0.0f, -3.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		circuito.Draw(staticShader);
 
 		//Caja Transparente
 		/*glEnable(GL_BLEND);
