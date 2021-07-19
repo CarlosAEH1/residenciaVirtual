@@ -244,8 +244,13 @@ int main()
 	Model tienda("resources/objects/Tienda/Tienda.obj");
 	Model comedor("resources/objects/Comedor/Comedor.obj");
 	Model glorieta("resources/objects/Glorieta/Glorieta.obj");
+	Model corredor("resources/objects/Corredor/Corredor.obj");
+	Model columpios("resources/objects/Columpios/Columpios.obj");
+	Model resbaladilla("resources/objects/Resbaladilla/Resbaladilla.obj");
+	Model pelota("resources/objects/Pelota/Pelota.obj");
+	Model banco("resources/objects/Banco/Banco.obj");
+	Model cactus("resources/objects/Cactus/Cactus.obj");
 	Model montana("resources/objects/Montana/Montana.obj");
-	Model banqueta("resources/objects/Banqueta/Banqueta.obj");
 	Model circuito("resources/objects/Circuito/Circuito.obj");
 
 	//--------------------------------------------------------------------------------------------------------------------------
@@ -429,6 +434,47 @@ int main()
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		glorieta.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-158.0f, 0.0f, 300.0f));
+		staticShader.setMat4("model", model);
+		corredor.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-20.0f, 0.0f, 400.0f));
+		staticShader.setMat4("model", model);
+		columpios.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-200.0f, 0.0f, 425.0f));
+		model = glm::rotate(model, glm::radians(-135.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		resbaladilla.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-300.0f, 0.0f, 400.0f));
+		staticShader.setMat4("model", model);
+		pelota.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-27.0f, 0.0f, 230.0f));
+		staticShader.setMat4("model", model);
+		banco.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-128.0f, 0.0f, 230.0f));
+		staticShader.setMat4("model", model);
+		banco.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-228.0f, 0.0f, 230.0f));
+		staticShader.setMat4("model", model);
+		banco.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-400.0f, 0.0f, 300.0f));
+		staticShader.setMat4("model", model);
+		cactus.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-700.0f, 0.0f, -700.0f));
