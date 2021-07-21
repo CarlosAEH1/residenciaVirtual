@@ -245,12 +245,44 @@ int main()
 	Model comedor("resources/objects/Comedor/Comedor.obj");
 	Model glorieta("resources/objects/Glorieta/Glorieta.obj");
 	Model corredor("resources/objects/Corredor/Corredor.obj");
-	Model columpios("resources/objects/Columpios/Columpios.obj");
+	Model columpios("resources/objects/Columpios/Estructura.obj");
+	Model columpios1("resources/objects/Columpios/Columpio1.obj");
+	Model columpios2("resources/objects/Columpios/Columpio2.obj");
 	Model resbaladilla("resources/objects/Resbaladilla/Resbaladilla.obj");
 	Model pelota("resources/objects/Pelota/Pelota.obj");
 	Model banco("resources/objects/Banco/Banco.obj");
 	Model cactus("resources/objects/Cactus/Cactus.obj");
 	Model montana("resources/objects/Montana/Montana.obj");
+	Model aguila("resources/objects/Aguila/Cuerpo.obj");
+	Model aguilaDerecha("resources/objects/Aguila/AlaDerecha.obj");
+	Model aguilaIzquierda("resources/objects/Aguila/AlaIzquierda.obj");
+	Model caballo("resources/objects/Caballo/Torso.obj");
+	Model caballoCuello("resources/objects/Caballo/Cuello.obj");
+	Model caballoCabeza("resources/objects/Caballo/Cabeza.obj");
+	Model caballoCabello("resources/objects/Caballo/Cabello.obj");
+	Model caballoCola("resources/objects/Caballo/Cola.obj");
+	Model caballoPiernaDD("resources/objects/Caballo/PiernaDD.obj");
+	Model caballoPiernaDI("resources/objects/Caballo/PiernaDI.obj");
+	Model caballoPiernaTD("resources/objects/Caballo/PiernaTD.obj");
+	Model caballoPiernaTI("resources/objects/Caballo/PiernaTI.obj");
+	Model caballoPataDD("resources/objects/Caballo/PataDD.obj");
+	Model caballoPataDI("resources/objects/Caballo/PataDI.obj");
+	Model caballoPataTD("resources/objects/Caballo/PataTD.obj");
+	Model caballoPataTI("resources/objects/Caballo/PataTI.obj");
+	Model roca("resources/objects/Roca/Roca.obj");
+	Model serpiente("resources/objects/Serpiente/Serpiente.obj");
+	Model conejo("resources/objects/Conejo/Conejo.obj");
+	Model gallina("resources/objects/Gallina/Cuerpo.obj");
+	Model gallinaCabeza("resources/objects/Gallina/Cabeza.obj");
+	Model gallinaPataD("resources/objects/Gallina/PataDerecha.obj");
+	Model gallinaPataI("resources/objects/Gallina/PataIzquierda.obj");
+	Model vaca("resources/objects/Vaca/Cuerpo.obj");
+	Model arbusto("resources/objects/Arbusto/Arbusto.obj");
+	Model vacaCabeza("resources/objects/Vaca/Cabeza.obj");
+	Model motocicleta("resources/objects/Motocicleta/Moto.obj");
+	Model motocicletaManubrio("resources/objects/Motocicleta/Manubrio.obj");
+	Model motocicletaLlantaD("resources/objects/Motocicleta/LlantaDelantera.obj");
+	Model motocicletaLlantaT("resources/objects/Motocicleta/LlantaTrasera.obj");
 	Model circuito("resources/objects/Circuito/Circuito.obj");
 
 	//--------------------------------------------------------------------------------------------------------------------------
@@ -446,6 +478,16 @@ int main()
 		columpios.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-20.0f, 0.0f, 400.0f));
+		staticShader.setMat4("model", model);
+		columpios1.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-20.0f, 0.0f, 400.0f));
+		staticShader.setMat4("model", model);
+		columpios2.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-200.0f, 0.0f, 425.0f));
 		model = glm::rotate(model, glm::radians(-135.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
@@ -482,6 +524,206 @@ int main()
 		model = glm::scale(model, glm::vec3(10.0f, 10.0f, 10.0f));
 		staticShader.setMat4("model", model);
 		montana.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 1000.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		aguila.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 1000.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		aguilaDerecha.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 1000.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		aguilaIzquierda.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballo.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoCuello.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoCabeza.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoCabello.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoCola.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoPiernaDD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoPiernaDI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoPiernaTD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoPiernaTI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoPataDD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoPataDI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoPataTD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		caballoPataTI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-400.0f, 0.0f, 100.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		cactus.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-300.0f, 0.0f, 200.0f));
+		model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		cactus.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-350.0f, 0.0f, 150.0f));
+		model = glm::rotate(model, glm::radians(135.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		cactus.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-300.0f, 0.0f, -50.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		roca.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-125.0f, 0.0f, -450.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		roca.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-330.0f, 0.0f, -35.0f));
+		staticShader.setMat4("model", model);
+		serpiente.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-250.0f, 0.0f, 50.0f));
+		staticShader.setMat4("model", model);
+		conejo.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-150.0f, 0.0f, 75.0f));
+		staticShader.setMat4("model", model);
+		gallina.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-150.0f, 0.0f, 75.0f));
+		staticShader.setMat4("model", model);
+		gallinaCabeza.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-150.0f, 0.0f, 75.0f));
+		staticShader.setMat4("model", model);
+		gallinaPataD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-150.0f, 0.0f, 75.0f));
+		staticShader.setMat4("model", model);
+		gallinaPataI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-200.0f, 0.0f, 150.0f));
+		staticShader.setMat4("model", model);
+		vaca.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-200.0f, 0.0f, 150.0f));
+		staticShader.setMat4("model", model);
+		vacaCabeza.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-330.0f, 0.0f, -40.0f));
+		staticShader.setMat4("model", model);
+		arbusto.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-370.0f, 0.0f, 100.0f));
+		staticShader.setMat4("model", model);
+		arbusto.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-250.0f, 0.0f, 60.0f));
+		staticShader.setMat4("model", model);
+		arbusto.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-400.0f, 0.0f, 200.0f));
+		staticShader.setMat4("model", model);
+		arbusto.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-450.0f, 0.0f, 150.0f));
+		staticShader.setMat4("model", model);
+		arbusto.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-450.0f, 0.0f, 300.0f));
+		staticShader.setMat4("model", model);
+		arbusto.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-50.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		motocicleta.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-50.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		motocicletaManubrio.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-50.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		motocicletaLlantaD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-50.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		motocicletaLlantaT.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(262.5f, 0.0f, -3.0f));
