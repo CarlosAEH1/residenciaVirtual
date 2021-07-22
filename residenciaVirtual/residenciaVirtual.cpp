@@ -284,6 +284,18 @@ int main()
 	Model motocicletaLlantaD("resources/objects/Motocicleta/LlantaDelantera.obj");
 	Model motocicletaLlantaT("resources/objects/Motocicleta/LlantaTrasera.obj");
 	Model circuito("resources/objects/Circuito/Circuito.obj");
+	Model sedan("resources/objects/Sedan/Sedan.obj");
+	Model sedanModerno("resources/objects/SedanModerno/Auto.obj");
+	Model modernoLlantasT("resources/objects/SedanModerno/LLantasTraseras.obj");
+	Model modernoLlantaDD("resources/objects/SedanModerno/LlantaDelanteraD.obj");
+	Model modernoLlantaDI("resources/objects/SedanModerno/LlantaDelanteraI.obj");
+	Model camioneta("resources/objects/Camioneta/Camioneta.obj");
+	Model buggi("resources/objects/Buggi/Auto.obj");
+	Model buggiLlantasT("resources/objects/Buggi/LlantasTraseras.obj");
+	Model buggiLlantaDD("resources/objects/Buggi/LlantaDelanteraD.obj");
+	Model buggiLlantaDI("resources/objects/Buggi/LlantaDelanteraI.obj");
+	Model motoneta("resources/objects/Motoneta/Motoneta.obj");
+	Model bicicleta("resources/objects/Bicicleta/Bicicleta.obj");
 
 	//--------------------------------------------------------------------------------------------------------------------------
 	//Inicializacion de KeyFrames
@@ -730,6 +742,72 @@ int main()
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		circuito.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(375.0f, 0.0f, -200.0f));
+		staticShader.setMat4("model", model);
+		sedanModerno.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(375.0f, 0.0f, -200.0f));
+		staticShader.setMat4("model", model);
+		modernoLlantasT.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(375.0f, 0.0f, -200.0f));
+		staticShader.setMat4("model", model);
+		modernoLlantaDD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(375.0f, 0.0f, -200.0f));
+		staticShader.setMat4("model", model);
+		modernoLlantaDI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(377.5f, 0.0f, -100.0f));
+		staticShader.setMat4("model", model);
+		sedan.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-10.0f, 0.0f, 150.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		camioneta.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(375.0f, 0.0f, -300.0f));
+		staticShader.setMat4("model", model);
+		camioneta.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-10.0f, 0.0f, -400.0f));
+		staticShader.setMat4("model", model);
+		buggi.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-10.0f, 0.0f, -400.0f));
+		staticShader.setMat4("model", model);
+		buggiLlantasT.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-10.0f, 0.0f, -400.0f));
+		staticShader.setMat4("model", model);
+		buggiLlantaDD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-10.0f, 0.0f, -400.0f));
+		staticShader.setMat4("model", model);
+		buggiLlantaDI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(260.0f, 0.0f, 315.5f));
+		staticShader.setMat4("model", model);
+		motoneta.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(5.0f, 0.0f, 220.0f));
+		staticShader.setMat4("model", model);
+		bicicleta.Draw(staticShader);
 
 		//Caja Transparente
 		/*glEnable(GL_BLEND);
