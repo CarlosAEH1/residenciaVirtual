@@ -296,6 +296,17 @@ int main()
 	Model buggiLlantaDI("resources/objects/Buggi/LlantaDelanteraI.obj");
 	Model motoneta("resources/objects/Motoneta/Motoneta.obj");
 	Model bicicleta("resources/objects/Bicicleta/Bicicleta.obj");
+	Model leonardo("resources/objects/Leonardo/Cabeza.obj");
+	Model leonardoTorso("resources/objects/Leonardo/Torso.obj");
+	Model leonardoIngle("resources/objects/Leonardo/Ingle.obj");
+	Model leonardoBrazoD("resources/objects/Leonardo/BrazoDerecho.obj");
+	Model leonardoManoD("resources/objects/Leonardo/ManoDerecha.obj");
+	Model leonardoBrazoI("resources/objects/Leonardo/BrazoIzquierdo.obj");
+	Model leonardoManoI("resources/objects/Leonardo/ManoIzquierda.obj");
+	Model leonardoPiernaD("resources/objects/Leonardo/PiernaDerecha.obj");
+	Model leonardoPieD("resources/objects/Leonardo/PieDerecho.obj");
+	Model leonardoPiernaI("resources/objects/Leonardo/PiernaIzquierda.obj");
+	Model leonardoPieI("resources/objects/Leonardo/PieIzquierdo.obj");
 
 	//--------------------------------------------------------------------------------------------------------------------------
 	//Inicializacion de KeyFrames
@@ -765,6 +776,61 @@ int main()
 		model = glm::translate(model, glm::vec3(5.0f, 0.0f, 220.0f));
 		staticShader.setMat4("model", model);
 		bicicleta.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardo.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoTorso.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoIngle.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoBrazoD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoBrazoI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoManoD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoManoI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoPiernaD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoPiernaI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoPieD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		staticShader.setMat4("model", model);
+		leonardoPieI.Draw(staticShader);
 
 		//Caja Transparente
 		/*glEnable(GL_BLEND);
