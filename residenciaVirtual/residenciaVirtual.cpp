@@ -64,6 +64,17 @@ glm::vec3 lightDirection(0.5f, -0.2f, -1.0f);
 // posiciones
 //float x = 0.0f;
 //float y = 0.0f;
+bool
+	motor = false,
+	avanza = true,
+	recorrido = true;
+float
+	rueda = 0.0f,
+	autoX = 0.0f,
+	autoY = 0.0f,
+	autoZ = 0.0f,
+	giro = 0.0f,
+	giroLlanta = 0.0f;
 
 //Keyframes (Manipulación y dibujo)
 float
@@ -149,6 +160,125 @@ void animate(void)
 			posZ += incZ;
 
 			i_curr_steps++;
+		}
+	}
+	//Auto
+	if (motor)
+	{
+		if (avanza)
+		{
+			if (recorrido)
+			{
+				if (((autoZ <= 10.0f) and (autoZ > 0.0f)) and (autoX == 0.0f)) autoZ -= 1.f;
+				if ((autoZ == 0.0f) and (autoX == 0.0f)) avanza = false;
+				if (((autoZ >= -10.0f) and (autoZ < 220.0f)) and ((autoX >= 0.0f) and (autoX < 20.0f)) and (giro < 45.0f) and (giroLlanta < 45.0f))
+				{
+					giroLlanta += 1.0f;
+					giro += 1.0f;
+					autoZ += 1.0f;
+					autoX += 1.0f;
+				}
+				if (((autoZ >= -10.0f) and (autoZ < 220.0f)) and ((autoX >= 20.0f) and (autoX < 40.0f)) and (giro > 0.0f) and (giroLlanta < 45.0f))
+				{
+					giroLlanta -= 1.0f;
+					giro -= 1.0f;
+					autoZ += 1.0f;
+					autoX += 1.0f;
+				}
+				if (((autoZ >= -10.0f) and (autoZ < 220.0f)) and (autoX == 40.0f)) autoZ += 2.0f;
+				if (((autoZ >= 210.0f) and (autoZ < 256.0f)) and ((autoX <= 40.0f) and (autoX > -250.0f)) and (giro > -90.0f))
+				{
+					giro -= 2.0f;
+					autoZ += 1.0f;
+					autoX -= 1.0f;
+				}
+				if ((autoZ == 256.0f) and ((autoX <= 40.0f) and (autoX > -250.0f))) autoX -= 2.0f;
+				if (((autoZ >= 256.0f) and (autoZ < 600.0f)) and ((autoX <= -250.0f) and (autoX > -296.0f)) and (giro < 0.0f))
+				{
+					giro += 2.0f;
+					autoZ += 1.0f;
+					autoX -= 1.0f;
+				}
+				if (((autoZ >= 256.0f) and (autoZ < 600.0f)) and (autoX == -296.0f)) autoZ += 2.0f;
+				if (((autoZ >= 600.0f) and (autoZ < 646.0f)) and ((autoX >= -296.0f) and (autoX < 40.0f)) and (giro < 90.0f))
+				{
+					giro += 2.0f;
+					autoZ += 1.0f;
+					autoX += 1.0f;
+				}
+				if ((autoZ == 646.0f) and ((autoX >= -296.0f) and (autoX < 40.0f))) autoX += 2.0f;
+				if (((autoZ <= 646.0f) and (autoZ > 310.0f)) and ((autoX >= 40.0f) and (autoX < 86.0f)) and (giro < 180.0f))
+				{
+					giro += 2.0f;
+					autoZ -= 1.0f;
+					autoX += 1.0f;
+				}
+				if (((autoZ <= 646.0f) and (autoZ > 320.0f)) and (autoX == 86.0f)) autoZ -= 2.0f;
+				if (((autoZ <= 320.0f) and (autoZ > 274.0f)) and ((autoX <= 86.0f) and (autoX > -180.0f)) and (giro < 270.0f))
+				{
+					giro += 2.0f;
+					autoZ -= 1.0f;
+					autoX -= 1.0f;
+				}
+				if ((autoZ == 274.0f) and ((autoX <= 86.0f) and (autoX > -180.0f)))
+				{
+					autoX -= 2.0f;
+					if (autoX <= -180.0f) recorrido = false;
+				}
+			}
+			else
+			{
+				if (((autoZ <= 274.0f) and (autoZ > -130.0f)) and ((autoX <= -180.0f) and (autoX > -226.0f)) and (giro > 180.0f))
+				{
+					giro -= 2.0f;
+					autoZ -= 1.0f;
+					autoX -= 1.0f;
+				}
+				if (((autoZ <= 274.0f) and (autoZ > -150.0f)) and (autoX == -226.0f)) autoZ -= 2.0f;
+				if (((autoZ <= -150.0f) and (autoZ > -194.0f)) and ((autoX >= -226.0f) and (autoX < -4.0f)) and (giro > 90.0f))
+				{
+					giro -= 2.0f;
+					autoZ -= 1.0f;
+					autoX += 1.0f;
+				}
+				if ((autoZ == -194.0f) and ((autoX >= -226.0f) and (autoX < -6.0f))) autoX += 2.0f;
+				if (((autoZ >= -194.0f) and (autoZ < -50.0f)) and ((autoX >= -7.0f) and (autoX < 40.0f)) and (giro > 0.0f))
+				{
+					giro -= 2.0f;
+					autoZ += 1.0f;
+					autoX += 1.0f;
+				}
+				if (((autoZ >= -194.0f) and (autoZ < -40.0f)) and (autoX == 40.0f)) autoZ += 2.0f;
+				if (((autoZ >= -40.0f) and (autoZ < 10.0f)) and ((autoX <= 40.0f) and (autoX > 20.0f)) and (giro > -45.0f) and (giroLlanta > -45.0f))
+				{
+					giroLlanta -= 1.0f;
+					giro -= 1.0f;
+					autoZ += 1.0f;
+					autoX -= 1.0f;
+				}
+				if (((autoZ >= -40.0f) and (autoZ < 10.0f)) and ((autoX <= 20.0f) and (autoX > 0.0f)) and (giro < 0.0f) and (giroLlanta < 0.0f))
+				{
+					giroLlanta += 1.0f;
+					giro += 1.0f;
+					autoZ += 1.0f;
+					autoX -= 1.0f;
+				}
+				if (((autoZ >= -40.0f) and (autoZ < 10.0f)) and (autoX == 0.0f))
+				{
+					autoZ += 1.0f;
+					if (autoZ == 10.0f) recorrido = true;
+				}
+			}
+			rueda += 1.0f;
+		}	
+		else
+		{
+			if (autoZ >= -10.0f)
+			{
+				autoZ -= 1.0f;
+				rueda -= 1.0f;
+				if (autoZ <= -10.0f) avanza = true;
+			}
 		}
 	}
 }
@@ -286,9 +416,8 @@ int main()
 	Model circuito("resources/objects/Circuito/Circuito.obj");
 	Model sedan("resources/objects/Sedan/Sedan.obj");
 	Model sedanModerno("resources/objects/SedanModerno/Auto.obj");
-	Model modernoLlantasT("resources/objects/SedanModerno/LLantasTraseras.obj");
-	Model modernoLlantaDD("resources/objects/SedanModerno/LlantaDelanteraD.obj");
-	Model modernoLlantaDI("resources/objects/SedanModerno/LlantaDelanteraI.obj");
+	Model modernoLlantas("resources/objects/SedanModerno/LLantasTraseras.obj");
+	Model modernoLlanta("resources/objects/SedanModerno/LlantaDelantera.obj");
 	Model camioneta("resources/objects/Camioneta/Camioneta.obj");
 	Model buggi("resources/objects/Buggi/Auto.obj");
 	Model buggiLlantasT("resources/objects/Buggi/LlantasTraseras.obj");
@@ -311,7 +440,7 @@ int main()
 	//--------------------------------------------------------------------------------------------------------------------------
 	//Inicializacion de KeyFrames
 	//--------------------------------------------------------------------------------------------------------------------------
-
+	 
 	for (int i = 0; i < MAX_FRAMES; i++)
 	{
 		KeyFrame[i].posX = 0;
@@ -425,25 +554,21 @@ int main()
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(304.5f, 0.0f, 260.0f));
-		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		tienda.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(227.0f, 0.0f, 210.0f));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		comedor.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(227.0f, 0.0f, 311.5f));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		comedor.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-300.0f, 0.0f, 300.0f));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		glorieta.Draw(staticShader);
 
@@ -712,24 +837,30 @@ int main()
 		circuito.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(375.0f, 0.0f, -200.0f));
+		model = glm::translate(model, glm::vec3(375.0f+autoX, 0.0f + autoY, -200.0f + autoZ));
+		tmp = model = glm::rotate(model, glm::radians(giro), glm::vec3(0.0f, 1.0f, 0.0f));	//Dependencia tmp
 		staticShader.setMat4("model", model);
 		sedanModerno.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(375.0f, 0.0f, -200.0f));
+		model = glm::translate(tmp, glm::vec3(0.0f, 6.0f, -21.7f));
+		model = glm::rotate(model, glm::radians(rueda), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
-		modernoLlantasT.Draw(staticShader);
+		modernoLlantas.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(375.0f, 0.0f, -200.0f));
+		model = glm::translate(tmp, glm::vec3(-12.7f, 6.0f, 26.2f));
+		model = glm::rotate(model, glm::radians(rueda), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroLlanta), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
-		modernoLlantaDD.Draw(staticShader);
+		modernoLlanta.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(375.0f, 0.0f, -200.0f));
+		model = glm::translate(tmp, glm::vec3(12.7f, 6.0f, 26.2f));
+		model = glm::rotate(model, glm::radians(rueda), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(180.0f+giroLlanta), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
-		modernoLlantaDI.Draw(staticShader);
+		modernoLlanta.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(377.5f, 0.0f, -100.0f));
@@ -896,6 +1027,17 @@ void my_input(GLFWwindow *window, int key, int scancode, int action, int mode)
 		lightPosition.x++;
 	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
 		lightPosition.x--;
+
+	//Animacion de auto
+	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
+	{
+		motor ^= true;
+		rueda = 0.0f;
+		autoX = 0.0f;	//Reseteo
+		autoY = 0.0f;	//Reseteo
+		autoZ = 0.0f;	//Reseteo
+		giro = 0.0f;
+	}
 
 	//To play KeyFrame animation 
 	if (key == GLFW_KEY_P && action == GLFW_PRESS)
