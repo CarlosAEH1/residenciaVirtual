@@ -1,14 +1,17 @@
-#
-# Wavefront material file
-# Converted by Meshlab Group
-#
+# 3ds Max Wavefront OBJ Exporter v0.99 - (c)2007 guruware
+# File Created: 26.07.2021 23:48:16
 
 newmtl material_0
-Ka 0.200000 0.200000 0.200000
-Kd 0.105882 0.345098 0.690196
-Ks 1.000000 1.000000 1.000000
-Tr 1.000000
-illum 2
-Ns 0.000000
-map_Kd Cabello.png
-
+	Kd 0.1059 0.3451 0.6902
+	Ks 1.0000 1.0000 1.0000
+	Tr 1.0000
+	d 0.0000
+	Tf 0.0000 0.0000 0.0000
+	Pr 1.0000
+	Pm 0.0000
+	Pc 0.0000
+	Pcr 0.0000
+	Ni 1.5000
+	Ke 0.0000 0.0000 0.0000
+	illum 2
+	map_Kd C:\Users\carlo\Documents\3ds Max 2022\export\Caballo\Cabello.png

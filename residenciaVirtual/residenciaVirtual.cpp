@@ -87,28 +87,70 @@ float
 
 //Keyframes (Manipulación y dibujo)
 float
-	posX = 0.0f,
-	posY = 0.0f,
-	posZ = 0.0f;
+	piernaCaballoDD = 0.0f,
+	piernaCaballoDI = 0.0f,
+	piernaCaballoTD = 0.0f,
+	piernaCaballoTI = 0.0f,
+	pataCaballoDD = 0.0f,
+	pataCaballoDI = 0.0f,
+	pataCaballoTD = 0.0f,
+	pataCaballoTI = 0.0f,
+	pataCaballoDDX = 0.0f,
+	pataCaballoDIX = 0.0f,
+	pataCaballoTDX = 0.0f,
+	pataCaballoTIX = 0.0f,
+	caballoX = 0.0f,
+	caballoY = 0.0f,
+	caballoZ = 0.0f,
+	giroCaballo = 0.0f,
+	subeCaballo = 0.0f;
 float
-	incX = 0.0f,
-	incY = 0.0f,
-	incZ = 0.0f;
+	piernaCaballoDDInc = 0.0f,
+	piernaCaballoDIInc = 0.0f,
+	piernaCaballoTDInc = 0.0f,
+	piernaCaballoTIInc = 0.0f,
+	pataCaballoDDInc = 0.0f,
+	pataCaballoDIInc = 0.0f,
+	pataCaballoTDInc = 0.0f,
+	pataCaballoTIInc = 0.0f,
+	pataCaballoDDXInc = 0.0f,
+	pataCaballoDIXInc = 0.0f,
+	pataCaballoTDXInc = 0.0f,
+	pataCaballoTIXInc = 0.0f,
+	caballoXInc = 0.0f,
+	caballoYInc = 0.0f,
+	caballoZInc = 0.0f,
+	giroCaballoInc = 0.0f,
+	subeCaballoInc = 0.0f;
 
-#define MAX_FRAMES 9
+#define MAX_FRAMES 10
 int i_max_steps = 60;
 int i_curr_steps = 0;
 typedef struct _frame
 {
 	//Variables para key frames
-	float posX;				//Variable para PosicionX
-	float posY;				//Variable para PosicionY
-	float posZ;				//Variable para PosicionZ
+	float piernaCaballoDD;
+	float piernaCaballoDI;
+	float piernaCaballoTD;
+	float piernaCaballoTI;
+	float pataCaballoDD;
+	float pataCaballoDI;
+	float pataCaballoTD;
+	float pataCaballoTI;
+	float pataCaballoDDX;
+	float pataCaballoDIX;
+	float pataCaballoTDX;
+	float pataCaballoTIX;
+	float caballoX;
+	float caballoY;
+	float caballoZ;
+	float giroCaballo;
+	float subeCaballo;
 
 }FRAME;
 
 FRAME KeyFrame[MAX_FRAMES];
-int FrameIndex = 0;			//introduce datos
+int FrameIndex = 10;			//introduce datos
 bool play = false;
 int playIndex = 0;
 
@@ -117,27 +159,67 @@ void saveFrame(void)
 	//printf("frameindex %d\n", FrameIndex);
 	std::cout << "Frame Index = " << FrameIndex << std::endl;
 
-	KeyFrame[FrameIndex].posX = posX;
-	KeyFrame[FrameIndex].posY = posY;
-	KeyFrame[FrameIndex].posZ = posZ;
+	KeyFrame[FrameIndex].piernaCaballoDD = piernaCaballoDD;
+	KeyFrame[FrameIndex].piernaCaballoDI = piernaCaballoDI;
+	KeyFrame[FrameIndex].piernaCaballoTD = piernaCaballoTD;
+	KeyFrame[FrameIndex].piernaCaballoTI = piernaCaballoTI;
+	KeyFrame[FrameIndex].pataCaballoDD = pataCaballoDD;
+	KeyFrame[FrameIndex].pataCaballoDI = pataCaballoDI;
+	KeyFrame[FrameIndex].pataCaballoTD = pataCaballoTD;
+	KeyFrame[FrameIndex].pataCaballoTI = pataCaballoTI;
+	KeyFrame[FrameIndex].pataCaballoDDX = pataCaballoDDX;
+	KeyFrame[FrameIndex].pataCaballoDIX = pataCaballoDIX;
+	KeyFrame[FrameIndex].pataCaballoTDX = pataCaballoTDX;
+	KeyFrame[FrameIndex].pataCaballoTIX = pataCaballoTIX;
+	KeyFrame[FrameIndex].caballoX = caballoX;
+	KeyFrame[FrameIndex].caballoY = caballoY;
+	KeyFrame[FrameIndex].caballoZ = caballoZ;
+	KeyFrame[FrameIndex].giroCaballo = giroCaballo;
+	KeyFrame[FrameIndex].subeCaballo = subeCaballo;
 
 	FrameIndex++;
 }
 
 void resetElements(void)
 {
-	posX = KeyFrame[0].posX;
-	posY = KeyFrame[0].posY;
-	posZ = KeyFrame[0].posZ;
-
+	piernaCaballoDD = KeyFrame[0].piernaCaballoDD;
+	piernaCaballoDI = KeyFrame[0].piernaCaballoDI;
+	piernaCaballoTD = KeyFrame[0].piernaCaballoTD;
+	piernaCaballoTI = KeyFrame[0].piernaCaballoTI;
+	pataCaballoDD = KeyFrame[0].pataCaballoDD;
+	pataCaballoDI = KeyFrame[0].pataCaballoDI;
+	pataCaballoTD = KeyFrame[0].pataCaballoTD;
+	pataCaballoTI = KeyFrame[0].pataCaballoTI;
+	pataCaballoDDX = KeyFrame[0].pataCaballoDDX;
+	pataCaballoDIX = KeyFrame[0].pataCaballoDIX;
+	pataCaballoTDX = KeyFrame[0].pataCaballoTDX;
+	pataCaballoTIX = KeyFrame[0].pataCaballoTIX;
+	caballoX = KeyFrame[0].caballoX;
+	caballoY = KeyFrame[0].caballoY;
+	caballoZ = KeyFrame[0].caballoZ;
+	giroCaballo = KeyFrame[0].giroCaballo;
+	subeCaballo = KeyFrame[0].subeCaballo;
 }
 
 void interpolation(void)
 {
-	incX = (KeyFrame[playIndex + 1].posX - KeyFrame[playIndex].posX) / i_max_steps;
-	incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
-	incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
-
+	piernaCaballoDDInc = (KeyFrame[playIndex + 1].piernaCaballoDD - KeyFrame[playIndex].piernaCaballoDD) / i_max_steps;
+	piernaCaballoDIInc = (KeyFrame[playIndex + 1].piernaCaballoDI - KeyFrame[playIndex].piernaCaballoDI) / i_max_steps;
+	piernaCaballoTDInc = (KeyFrame[playIndex + 1].piernaCaballoTD - KeyFrame[playIndex].piernaCaballoTD) / i_max_steps;
+	piernaCaballoTIInc = (KeyFrame[playIndex + 1].piernaCaballoTI - KeyFrame[playIndex].piernaCaballoTI) / i_max_steps;
+	pataCaballoDDInc = (KeyFrame[playIndex + 1].pataCaballoDD - KeyFrame[playIndex].pataCaballoDD) / i_max_steps;
+	pataCaballoDIInc = (KeyFrame[playIndex + 1].pataCaballoDI - KeyFrame[playIndex].pataCaballoDI) / i_max_steps;
+	pataCaballoTDInc = (KeyFrame[playIndex + 1].pataCaballoTD - KeyFrame[playIndex].pataCaballoTD) / i_max_steps;
+	pataCaballoTIInc = (KeyFrame[playIndex + 1].pataCaballoTI - KeyFrame[playIndex].pataCaballoTI) / i_max_steps;
+	pataCaballoDDXInc = (KeyFrame[playIndex + 1].pataCaballoDDX - KeyFrame[playIndex].pataCaballoDDX) / i_max_steps;
+	pataCaballoDIXInc = (KeyFrame[playIndex + 1].pataCaballoDIX - KeyFrame[playIndex].pataCaballoDIX) / i_max_steps;
+	pataCaballoTDXInc = (KeyFrame[playIndex + 1].pataCaballoTDX - KeyFrame[playIndex].pataCaballoTDX) / i_max_steps;
+	pataCaballoTIXInc = (KeyFrame[playIndex + 1].pataCaballoTIX - KeyFrame[playIndex].pataCaballoTIX) / i_max_steps;
+	caballoXInc = (KeyFrame[playIndex + 1].caballoX - KeyFrame[playIndex].caballoX) / i_max_steps;
+	caballoYInc = (KeyFrame[playIndex + 1].caballoY - KeyFrame[playIndex].caballoY) / i_max_steps;
+	caballoZInc = (KeyFrame[playIndex + 1].caballoZ - KeyFrame[playIndex].caballoZ) / i_max_steps;
+	giroCaballoInc = (KeyFrame[playIndex + 1].giroCaballo - KeyFrame[playIndex].giroCaballo) / i_max_steps;
+	subeCaballoInc = (KeyFrame[playIndex + 1].subeCaballo - KeyFrame[playIndex].subeCaballo) / i_max_steps;
 }
 
 void animate(void)
@@ -164,9 +246,23 @@ void animate(void)
 		else
 		{
 			//Draw animation
-			posX += incX;
-			posY += incY;
-			posZ += incZ;
+			piernaCaballoDD += piernaCaballoDDInc;
+			piernaCaballoDI += piernaCaballoDIInc;
+			piernaCaballoTD += piernaCaballoTDInc;
+			piernaCaballoTI += piernaCaballoTIInc;
+			pataCaballoDD += pataCaballoDDInc;
+			pataCaballoDI += pataCaballoDIInc;
+			pataCaballoTD += pataCaballoTDInc;
+			pataCaballoTI += pataCaballoTIInc;
+			pataCaballoDDX += pataCaballoDDXInc;
+			pataCaballoDIX += pataCaballoDIXInc;
+			pataCaballoTDX += pataCaballoTDXInc;
+			pataCaballoTIX += pataCaballoTIXInc;
+			caballoX += caballoXInc;
+			caballoY += caballoYInc;
+			caballoZ += caballoZInc;
+			giroCaballo += giroCaballoInc;
+			subeCaballo += subeCaballoInc;
 
 			i_curr_steps++;
 		}
@@ -425,9 +521,7 @@ int main()
 	Model aguila("resources/objects/Aguila/Cuerpo.obj");
 	Model aguilaDerecha("resources/objects/Aguila/AlaDerecha.obj");
 	Model aguilaIzquierda("resources/objects/Aguila/AlaIzquierda.obj");
-	Model caballo("resources/objects/Caballo/Torso.obj");
-	Model caballoCuello("resources/objects/Caballo/Cuello.obj");
-	Model caballoCabeza("resources/objects/Caballo/Cabeza.obj");
+	Model caballo("resources/objects/Caballo/SinPatas.obj");
 	Model caballoCabello("resources/objects/Caballo/Cabello.obj");
 	Model caballoCola("resources/objects/Caballo/Cola.obj");
 	Model caballoPiernaDD("resources/objects/Caballo/PiernaDD.obj");
@@ -479,12 +573,192 @@ int main()
 	//Inicializacion de KeyFrames
 	//--------------------------------------------------------------------------------------------------------------------------
 	 
-	for (int i = 0; i < MAX_FRAMES; i++)
+	/*for (int i = 0; i < MAX_FRAMES; i++)
 	{
 		KeyFrame[i].posX = 0;
 		KeyFrame[i].posY = 0;
 		KeyFrame[i].posZ = 0;
-	}
+	}*/
+
+	KeyFrame[0].piernaCaballoDD = 0.0f;
+	KeyFrame[0].piernaCaballoDI = 0.0f;
+	KeyFrame[0].piernaCaballoTD = 0.0f;
+	KeyFrame[0].piernaCaballoTI = 0.0f;
+	KeyFrame[0].pataCaballoDD = 0.0f;
+	KeyFrame[0].pataCaballoDI = 0.0f;
+	KeyFrame[0].pataCaballoTD = 0.0f;
+	KeyFrame[0].pataCaballoTI = 0.0f;
+	KeyFrame[0].pataCaballoDDX = 0.0f;
+	KeyFrame[0].pataCaballoDIX = 0.0f;
+	KeyFrame[0].pataCaballoTDX = 0.0f;
+	KeyFrame[0].pataCaballoTIX = 0.0f;
+	KeyFrame[0].caballoX = 0.0f;
+	KeyFrame[0].caballoY = 0.0f;
+	KeyFrame[0].caballoZ = 0.0f;
+	KeyFrame[0].giroCaballo = 0.0f;
+	KeyFrame[0].subeCaballo = 0.0f;
+
+	KeyFrame[1].piernaCaballoDD = 45.0f;
+	KeyFrame[1].piernaCaballoDI = -45.0f;
+	KeyFrame[1].piernaCaballoTD = -30.0f;
+	KeyFrame[1].piernaCaballoTI = 30.0f;
+	KeyFrame[1].pataCaballoDD = 40.0f;
+	KeyFrame[1].pataCaballoDI = -40.0f;
+	KeyFrame[1].pataCaballoTD = -20.0f;
+	KeyFrame[1].pataCaballoTI = 20.0f;
+	KeyFrame[1].pataCaballoDDX = 5.0f;
+	KeyFrame[1].pataCaballoDIX = -5.0f;
+	KeyFrame[1].pataCaballoTDX = -2.0f;
+	KeyFrame[1].pataCaballoTIX = 2.0f;
+	KeyFrame[1].caballoX = -4.0f;
+	KeyFrame[1].caballoY = 0.0f;
+	KeyFrame[1].caballoZ = 0.0f;
+	KeyFrame[1].giroCaballo = 0.0f;
+	KeyFrame[1].subeCaballo = 0.0f;
+
+	KeyFrame[2].piernaCaballoDD = -45.0f;
+	KeyFrame[2].piernaCaballoDI = 45.0f;
+	KeyFrame[2].piernaCaballoTD = 30.0f;
+	KeyFrame[2].piernaCaballoTI = -30.0f;
+	KeyFrame[2].pataCaballoDD = -40.0f;
+	KeyFrame[2].pataCaballoDI = 40.0f;
+	KeyFrame[2].pataCaballoTD = 20.0f;
+	KeyFrame[2].pataCaballoTI = -20.0f;
+	KeyFrame[2].pataCaballoDDX = -5.0f;
+	KeyFrame[2].pataCaballoDIX = 5.0f;
+	KeyFrame[2].pataCaballoTDX = 2.0f;
+	KeyFrame[2].pataCaballoTIX = -2.0f;
+	KeyFrame[2].caballoX = -8.0f;
+	KeyFrame[2].caballoY = 0.0f;
+	KeyFrame[2].caballoZ = 0.0f;
+	KeyFrame[2].giroCaballo = 0.0f;
+	KeyFrame[2].subeCaballo = 0.0f;
+
+	KeyFrame[3].piernaCaballoDD = 45.0f;
+	KeyFrame[3].piernaCaballoDI = -45.0f;
+	KeyFrame[3].piernaCaballoTD = -30.0f;
+	KeyFrame[3].piernaCaballoTI = 30.0f;
+	KeyFrame[3].pataCaballoDD = 40.0f;
+	KeyFrame[3].pataCaballoDI = -40.0f;
+	KeyFrame[3].pataCaballoTD = -20.0f;
+	KeyFrame[3].pataCaballoTI = 20.0f;
+	KeyFrame[3].pataCaballoDDX = 5.0f;
+	KeyFrame[3].pataCaballoDIX = -5.0f;
+	KeyFrame[3].pataCaballoTDX = -2.0f;
+	KeyFrame[3].pataCaballoTIX = 2.0f;
+	KeyFrame[3].caballoX = -12.0f;
+	KeyFrame[3].caballoY = 0.0f;
+	KeyFrame[3].caballoZ = 0.0f;
+	KeyFrame[3].giroCaballo = 0.0f;
+	KeyFrame[3].subeCaballo = 0.0f;
+
+	KeyFrame[4].piernaCaballoDD = 0.0f;
+	KeyFrame[4].piernaCaballoDI = 0.0f;
+	KeyFrame[4].piernaCaballoTD = 45.0f;
+	KeyFrame[4].piernaCaballoTI = 45.0f;
+	KeyFrame[4].pataCaballoDD = 45.0f;
+	KeyFrame[4].pataCaballoDI = 45.0f;
+	KeyFrame[4].pataCaballoTD = 65.0f;
+	KeyFrame[4].pataCaballoTI = 65.0f;
+	KeyFrame[4].pataCaballoDDX = 0.0f;
+	KeyFrame[4].pataCaballoDIX = 0.0f;
+	KeyFrame[4].pataCaballoTDX = 5.0f;
+	KeyFrame[4].pataCaballoTIX = 5.0f;
+	KeyFrame[4].caballoX = -12.0f;
+	KeyFrame[4].caballoY = 0.0f;
+	KeyFrame[4].caballoZ = 0.0f;
+	KeyFrame[4].giroCaballo = 0.0f;
+	KeyFrame[4].subeCaballo = -65.0f;
+
+	KeyFrame[5].piernaCaballoDD = -45.0f;
+	KeyFrame[5].piernaCaballoDI = 0.0f;
+	KeyFrame[5].piernaCaballoTD = 30.0f;
+	KeyFrame[5].piernaCaballoTI = 30.0f;
+	KeyFrame[5].pataCaballoDD = -40.0f;
+	KeyFrame[5].pataCaballoDI = 0.0f;
+	KeyFrame[5].pataCaballoTD = 20.0f;
+	KeyFrame[5].pataCaballoTI = 20.0f;
+	KeyFrame[5].pataCaballoDDX = -5.0f;
+	KeyFrame[5].pataCaballoDIX = 0.0f;
+	KeyFrame[5].pataCaballoTDX = 2.0f;
+	KeyFrame[5].pataCaballoTIX = 2.0f;
+	KeyFrame[5].caballoX = -14.0f;
+	KeyFrame[5].caballoY = 0.0f;
+	KeyFrame[5].caballoZ = 0.0f;
+	KeyFrame[5].giroCaballo = 0.0f;
+	KeyFrame[5].subeCaballo = 0.0f;
+
+	KeyFrame[6].piernaCaballoDD = 45.0f;
+	KeyFrame[6].piernaCaballoDI = -45.0f;
+	KeyFrame[6].piernaCaballoTD = -30.0f;
+	KeyFrame[6].piernaCaballoTI = 30.0f;
+	KeyFrame[6].pataCaballoDD = 40.0f;
+	KeyFrame[6].pataCaballoDI = -40.0f;
+	KeyFrame[6].pataCaballoTD = -20.0f;
+	KeyFrame[6].pataCaballoTI = 20.0f;
+	KeyFrame[6].pataCaballoDDX = 5.0f;
+	KeyFrame[6].pataCaballoDIX = -5.0f;
+	KeyFrame[6].pataCaballoTDX = -2.0f;
+	KeyFrame[6].pataCaballoTIX = 2.0f;
+	KeyFrame[6].caballoX = -16.0f;
+	KeyFrame[6].caballoY = 0.0f;
+	KeyFrame[6].caballoZ = 0.0f;
+	KeyFrame[6].giroCaballo = 0.0f;
+	KeyFrame[6].subeCaballo = 0.0f;
+
+	KeyFrame[7].piernaCaballoDD = -45.0f;
+	KeyFrame[7].piernaCaballoDI = 45.0f;
+	KeyFrame[7].piernaCaballoTD = 30.0f;
+	KeyFrame[7].piernaCaballoTI = -30.0f;
+	KeyFrame[7].pataCaballoDD = -40.0f;
+	KeyFrame[7].pataCaballoDI = 40.0f;
+	KeyFrame[7].pataCaballoTD = 20.0f;
+	KeyFrame[7].pataCaballoTI = -20.0f;
+	KeyFrame[7].pataCaballoDDX = -5.0f;
+	KeyFrame[7].pataCaballoDIX = 5.0f;
+	KeyFrame[7].pataCaballoTDX = 2.0f;
+	KeyFrame[7].pataCaballoTIX = -2.0f;
+	KeyFrame[7].caballoX = -20.0f;
+	KeyFrame[7].caballoY = 0.0f;
+	KeyFrame[7].caballoZ = 0.0f;
+	KeyFrame[7].giroCaballo = 0.0f;
+	KeyFrame[7].subeCaballo = 0.0f;
+
+	KeyFrame[8].piernaCaballoDD = -45.0f;
+	KeyFrame[8].piernaCaballoDI = -45.0f;
+	KeyFrame[8].piernaCaballoTD = 45.0f;
+	KeyFrame[8].piernaCaballoTI = 45.0f;
+	KeyFrame[8].pataCaballoDD = 45.0f;
+	KeyFrame[8].pataCaballoDI = 45.0f;
+	KeyFrame[8].pataCaballoTD = 90.0f;
+	KeyFrame[8].pataCaballoTI = 90.0f;
+	KeyFrame[8].pataCaballoDDX = -5.0f;
+	KeyFrame[8].pataCaballoDIX = -5.0f;
+	KeyFrame[8].pataCaballoTDX = 5.0f;
+	KeyFrame[8].pataCaballoTIX = 5.0f;
+	KeyFrame[8].caballoX = -22.0f;
+	KeyFrame[8].caballoY = 0.0f;
+	KeyFrame[8].caballoZ = 0.0f;
+	KeyFrame[8].giroCaballo = 0.0f;
+	KeyFrame[8].subeCaballo = 0.0f;
+
+	KeyFrame[9].piernaCaballoDD = 0.0f;
+	KeyFrame[9].piernaCaballoDI = 0.0f;
+	KeyFrame[9].piernaCaballoTD = 0.0f;
+	KeyFrame[9].piernaCaballoTI = 0.0f;
+	KeyFrame[9].pataCaballoDD = 0.0f;
+	KeyFrame[9].pataCaballoDI = 0.0f;
+	KeyFrame[9].pataCaballoTD = 0.0f;
+	KeyFrame[9].pataCaballoTI = 0.0f;
+	KeyFrame[9].pataCaballoDDX = 0.0f;
+	KeyFrame[9].pataCaballoDIX = 0.0f;
+	KeyFrame[9].pataCaballoTDX = 0.0f;
+	KeyFrame[9].pataCaballoTIX = 0.0f;
+	KeyFrame[9].caballoX = -22.0f;
+	KeyFrame[9].caballoY = 0.0f;
+	KeyFrame[9].caballoZ = 0.0f;
+	KeyFrame[9].giroCaballo = 0.0f;
+	KeyFrame[9].subeCaballo = 0.0f;
 
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -684,67 +958,67 @@ int main()
 		aguilaIzquierda.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f+caballoX, 17.0f+caballoY, 0.0f+caballoZ));
+		tmp = model = glm::rotate(model, glm::radians(giroCaballo), glm::vec3(0.0f, 1.0f, 0.0f));	//Dependencia tmp
+		tmp = model = glm::rotate(model, glm::radians(subeCaballo), glm::vec3(0.0f, 0.0f, 1.0f));	//Dependencia tmp
 		staticShader.setMat4("model", model);
 		caballo.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		staticShader.setMat4("model", model);
-		caballoCuello.Draw(staticShader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		staticShader.setMat4("model", model);
-		caballoCabeza.Draw(staticShader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(-23.0f, 11.0f, 5.0f));
 		staticShader.setMat4("model", model);
 		caballoCabello.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(4.0f, 5.5f, 0.0f));
 		staticShader.setMat4("model", model);
 		caballoCola.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(-21.2f, -4.8f, -1.5f));
+		model = glm::rotate(model, glm::radians(piernaCaballoDD), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		caballoPiernaDD.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(-19.5f, -5.3f, 4.0f));
+		model = glm::rotate(model, glm::radians(piernaCaballoDI), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		caballoPiernaDI.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(1.8f, -4.3f, -3.0f));
+		model = glm::rotate(model, glm::radians(piernaCaballoTD), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		caballoPiernaTD.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(2.0f, -4.5f, 2.0f));
+		model = glm::rotate(model, glm::radians(piernaCaballoTI), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		caballoPiernaTI.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(-21.2f+pataCaballoDDX, -11.3f, -1.5f));
+		model = glm::rotate(model, glm::radians(pataCaballoDD), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		caballoPataDD.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(-18.6f+pataCaballoDIX, -11.3f, 3.5f));
+		model = glm::rotate(model, glm::radians(pataCaballoDI), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		caballoPataDI.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(2.3f+pataCaballoTDX, -9.3f, -3.0f));
+		model = glm::rotate(model, glm::radians(pataCaballoTD), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		caballoPataTD.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(tmp, glm::vec3(2.5f+pataCaballoTIX, -9.3f, 2.0f));
+		model = glm::rotate(model, glm::radians(pataCaballoTI), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		caballoPataTI.Draw(staticShader);
 
@@ -1057,14 +1331,14 @@ void my_input(GLFWwindow *window, int key, int scancode, int action, int mode)
 		camera.ProcessKeyboard(RIGHT, (float)deltaTime);
 
 	//To Configure Model
-	if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS)
+	/*if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS)
 		posZ++;
 	if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
 		posZ--;
 	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS)
 		posX--;
 	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-		posX++;
+		posX++;*/
 	if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS)
 		lightPosition.x++;
 	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
