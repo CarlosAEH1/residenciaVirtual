@@ -277,7 +277,7 @@ void animate(void)
 		}
 	}
 	//Automovil
-	/*if (motorAuto)
+	if (motorAuto)
 	{
 		if (avanzaAuto)
 		{
@@ -424,7 +424,7 @@ void animate(void)
 			if (subeMoto > 0.0f) subeMoto -= 2.0f;
 			motoZ += 1.0f;
 		}
-	}*/
+	}
 	//Aguila
 	if (energiaAguila)
 	{
@@ -599,7 +599,7 @@ int main()
 	Model aguila("resources/objects/Aguila/Cuerpo.obj");
 	Model aguilaDerecha("resources/objects/Aguila/AlaDerecha.obj");
 	Model aguilaIzquierda("resources/objects/Aguila/AlaIzquierda.obj");
-	/*Model caballo("resources/objects/Caballo/SinPatas.obj");
+	Model caballo("resources/objects/Caballo/SinPatas.obj");
 	Model caballoCabello("resources/objects/Caballo/Cabello.obj");
 	Model caballoCola("resources/objects/Caballo/Cola.obj");
 	Model caballoPiernaDD("resources/objects/Caballo/PiernaDD.obj");
@@ -609,7 +609,7 @@ int main()
 	Model caballoPataDD("resources/objects/Caballo/PataDD.obj");
 	Model caballoPataDI("resources/objects/Caballo/PataDI.obj");
 	Model caballoPataTD("resources/objects/Caballo/PataTD.obj");
-	Model caballoPataTI("resources/objects/Caballo/PataTI.obj");*/
+	Model caballoPataTI("resources/objects/Caballo/PataTI.obj");
 	Model roca("resources/objects/Roca/Roca.obj");
 	Model serpiente("resources/objects/Serpiente/Serpiente.obj");
 	Model conejo("resources/objects/Conejo/Conejo.obj");
@@ -620,14 +620,14 @@ int main()
 	Model vaca("resources/objects/Vaca/Cuerpo.obj");
 	Model arbusto("resources/objects/Arbusto/Arbusto.obj");
 	Model vacaCabeza("resources/objects/Vaca/Cabeza.obj");
-	/*Model motocicleta("resources/objects/Motocicleta/Moto.obj");
+	Model motocicleta("resources/objects/Motocicleta/Moto.obj");
 	Model motocicletaManubrio("resources/objects/Motocicleta/Manubrio.obj");
-	Model motocicletaLlanta("resources/objects/Motocicleta/Llanta.obj");*/
+	Model motocicletaLlanta("resources/objects/Motocicleta/Llanta.obj");
 	Model circuito("resources/objects/Circuito/Circuito.obj");
 	Model sedan("resources/objects/Sedan/Sedan.obj");
-	/*Model sedanModerno("resources/objects/SedanModerno/Auto.obj");
+	Model sedanModerno("resources/objects/SedanModerno/Auto.obj");
 	Model modernoLlantas("resources/objects/SedanModerno/LLantasTraseras.obj");
-	Model modernoLlanta("resources/objects/SedanModerno/LlantaDelantera.obj");*/
+	Model modernoLlanta("resources/objects/SedanModerno/LlantaDelantera.obj");
 	Model camioneta("resources/objects/Camioneta/Camioneta.obj");
 	Model buggi("resources/objects/Buggi/Auto.obj");
 	Model buggiLlantasT("resources/objects/Buggi/LlantasTraseras.obj");
@@ -635,7 +635,7 @@ int main()
 	Model buggiLlantaDI("resources/objects/Buggi/LlantaDelanteraI.obj");
 	Model motoneta("resources/objects/Motoneta/Motoneta.obj");
 	Model bicicleta("resources/objects/Bicicleta/Bicicleta.obj");
-	/*Model leonardo("resources/objects/Leonardo/Cabeza.obj");
+	Model leonardo("resources/objects/Leonardo/Cabeza.obj");
 	Model leonardoTorso("resources/objects/Leonardo/Torso.obj");
 	Model leonardoIngle("resources/objects/Leonardo/Ingle.obj");
 	Model leonardoBrazoD("resources/objects/Leonardo/BrazoDerecho.obj");
@@ -645,7 +645,7 @@ int main()
 	Model leonardoPiernaD("resources/objects/Leonardo/PiernaDerecha.obj");
 	Model leonardoPieD("resources/objects/Leonardo/PieDerecho.obj");
 	Model leonardoPiernaI("resources/objects/Leonardo/PiernaIzquierda.obj");
-	Model leonardoPieI("resources/objects/Leonardo/PieIzquierdo.obj");*/
+	Model leonardoPieI("resources/objects/Leonardo/PieIzquierdo.obj");
 
 	//--------------------------------------------------------------------------------------------------------------------------
 	//Inicializacion de KeyFrames
@@ -1039,7 +1039,7 @@ int main()
 		staticShader.setMat4("model", model);
 		aguilaIzquierda.Draw(staticShader);
 
-		/*model = glm::mat4(1.0f);
+		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f+caballoX, 17.0f+caballoY, 0.0f+caballoZ));
 		tmp = model = glm::rotate(model, glm::radians(giroCaballo), glm::vec3(0.0f, 1.0f, 0.0f));	//Dependencia tmp
 		tmp = model = glm::rotate(model, glm::radians(subeCaballo), glm::vec3(0.0f, 0.0f, 1.0f));	//Dependencia tmp
@@ -1102,7 +1102,7 @@ int main()
 		model = glm::translate(tmp, glm::vec3(2.5f+pataCaballoTIX, -9.3f, 2.0f));
 		model = glm::rotate(model, glm::radians(pataCaballoTI), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
-		caballoPataTI.Draw(staticShader);*/
+		caballoPataTI.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-400.0f, 0.0f, 100.0f));
@@ -1204,7 +1204,7 @@ int main()
 		staticShader.setMat4("model", model);
 		arbusto.Draw(staticShader);
 
-		/*model = glm::mat4(1.0f);
+		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-50.0f+motoX, 5.0f+motoY, -150.0f+motoZ));
 		tmp = model = glm::rotate(model, glm::radians(giroMoto), glm::vec3(0.0f, 1.0f, 0.0f));	//Dependencia tmp
 		tmp = model = glm::rotate(model, glm::radians(subeMoto), glm::vec3(1.0f, 0.0f, 1.0f));	//Dependencia tmp
@@ -1226,7 +1226,7 @@ int main()
 		model = glm::translate(tmp, glm::vec3(0.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(ruedaLlantaMoto), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
-		motocicletaLlanta.Draw(staticShader);*/
+		motocicletaLlanta.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(262.5f, 0.0f, -3.0f));
@@ -1234,7 +1234,7 @@ int main()
 		staticShader.setMat4("model", model);
 		circuito.Draw(staticShader);
 
-		/*model = glm::mat4(1.0f);
+		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(375.0f+autoX, 0.0f + autoY, -200.0f + autoZ));
 		tmp = model = glm::rotate(model, glm::radians(giroAuto), glm::vec3(0.0f, 1.0f, 0.0f));	//Dependencia tmp
 		staticShader.setMat4("model", model);
@@ -1258,7 +1258,7 @@ int main()
 		model = glm::rotate(model, glm::radians(ruedaLlantaAuto), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(180.0f+giroLlantaAuto), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
-		modernoLlanta.Draw(staticShader);*/
+		modernoLlanta.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(377.5f, 0.0f, -100.0f));
@@ -1306,7 +1306,7 @@ int main()
 		staticShader.setMat4("model", model);
 		bicicleta.Draw(staticShader);
 
-		/*model = glm::mat4(1.0f);
+		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
 		staticShader.setMat4("model", model);
 		leonardo.Draw(staticShader);
@@ -1359,7 +1359,7 @@ int main()
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
 		staticShader.setMat4("model", model);
-		leonardoPieI.Draw(staticShader);*/
+		leonardoPieI.Draw(staticShader);
 
 		//Caja Transparente
 		/*glEnable(GL_BLEND);
