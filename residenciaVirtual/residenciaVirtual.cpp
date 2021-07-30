@@ -913,7 +913,7 @@ int main()
 	KeyFrame[1].pataCaballoDIX = -5.0f;
 	KeyFrame[1].pataCaballoTDX = -2.0f;
 	KeyFrame[1].pataCaballoTIX = 2.0f;
-	KeyFrame[1].caballoX = -4.0f;
+	KeyFrame[1].caballoX = -20.0f;
 	KeyFrame[1].caballoY = 0.0f;
 	KeyFrame[1].caballoZ = 0.0f;
 	KeyFrame[1].giroCaballo = 0.0f;
@@ -959,7 +959,7 @@ int main()
 	KeyFrame[2].pataCaballoDIX = 5.0f;
 	KeyFrame[2].pataCaballoTDX = 2.0f;
 	KeyFrame[2].pataCaballoTIX = -2.0f;
-	KeyFrame[2].caballoX = -8.0f;
+	KeyFrame[2].caballoX = -40.0f;
 	KeyFrame[2].caballoY = 0.0f;
 	KeyFrame[2].caballoZ = 0.0f;
 	KeyFrame[2].giroCaballo = 0.0f;
@@ -1005,7 +1005,7 @@ int main()
 	KeyFrame[3].pataCaballoDIX = -5.0f;
 	KeyFrame[3].pataCaballoTDX = -2.0f;
 	KeyFrame[3].pataCaballoTIX = 2.0f;
-	KeyFrame[3].caballoX = -12.0f;
+	KeyFrame[3].caballoX = -80.0f;
 	KeyFrame[3].caballoY = 0.0f;
 	KeyFrame[3].caballoZ = 0.0f;
 	KeyFrame[3].giroCaballo = 0.0f;
@@ -1051,7 +1051,7 @@ int main()
 	KeyFrame[4].pataCaballoDIX = 0.0f;
 	KeyFrame[4].pataCaballoTDX = 5.0f;
 	KeyFrame[4].pataCaballoTIX = 5.0f;
-	KeyFrame[4].caballoX = -12.0f;
+	KeyFrame[4].caballoX = -80.0f;
 	KeyFrame[4].caballoY = 0.0f;
 	KeyFrame[4].caballoZ = 0.0f;
 	KeyFrame[4].giroCaballo = 0.0f;
@@ -1097,7 +1097,7 @@ int main()
 	KeyFrame[5].pataCaballoDIX = 0.0f;
 	KeyFrame[5].pataCaballoTDX = 2.0f;
 	KeyFrame[5].pataCaballoTIX = 2.0f;
-	KeyFrame[5].caballoX = -14.0f;
+	KeyFrame[5].caballoX = -120.0f;
 	KeyFrame[5].caballoY = 0.0f;
 	KeyFrame[5].caballoZ = 0.0f;
 	KeyFrame[5].giroCaballo = 0.0f;
@@ -1143,7 +1143,7 @@ int main()
 	KeyFrame[6].pataCaballoDIX = -5.0f;
 	KeyFrame[6].pataCaballoTDX = -2.0f;
 	KeyFrame[6].pataCaballoTIX = 2.0f;
-	KeyFrame[6].caballoX = -16.0f;
+	KeyFrame[6].caballoX = -160.0f;
 	KeyFrame[6].caballoY = 0.0f;
 	KeyFrame[6].caballoZ = 0.0f;
 	KeyFrame[6].giroCaballo = 0.0f;
@@ -1189,7 +1189,7 @@ int main()
 	KeyFrame[7].pataCaballoDIX = 5.0f;
 	KeyFrame[7].pataCaballoTDX = 2.0f;
 	KeyFrame[7].pataCaballoTIX = -2.0f;
-	KeyFrame[7].caballoX = -20.0f;
+	KeyFrame[7].caballoX = -200.0f;
 	KeyFrame[7].caballoY = 0.0f;
 	KeyFrame[7].caballoZ = 0.0f;
 	KeyFrame[7].giroCaballo = 0.0f;
@@ -1235,7 +1235,7 @@ int main()
 	KeyFrame[8].pataCaballoDIX = -5.0f;
 	KeyFrame[8].pataCaballoTDX = 5.0f;
 	KeyFrame[8].pataCaballoTIX = 5.0f;
-	KeyFrame[8].caballoX = -22.0f;
+	KeyFrame[8].caballoX = -240.0f;
 	KeyFrame[8].caballoY = 0.0f;
 	KeyFrame[8].caballoZ = 0.0f;
 	KeyFrame[8].giroCaballo = 0.0f;
@@ -1281,7 +1281,7 @@ int main()
 	KeyFrame[9].pataCaballoDIX = 0.0f;
 	KeyFrame[9].pataCaballoTDX = 0.0f;
 	KeyFrame[9].pataCaballoTIX = 0.0f;
-	KeyFrame[9].caballoX = -22.0f;
+	KeyFrame[9].caballoX = -240.0f;
 	KeyFrame[9].caballoY = 0.0f;
 	KeyFrame[9].caballoZ = 0.0f;
 	KeyFrame[9].giroCaballo = 0.0f;
