@@ -112,7 +112,35 @@ float
 	caballoY = 0.0f,
 	caballoZ = 0.0f,
 	giroCaballo = 0.0f,
-	subeCaballo = 0.0f;
+	subeCaballo = 0.0f,
+
+	cabezaLeonardo=0.0f,
+	piernaLeonardoD = 0.0f,
+	piernaLeonardoI = 0.0f,
+	brazoLeonardoDX = 0.0f,
+	brazoLeonardoDZ = 0.0f,
+	brazoLeonardoIX = 0.0f,
+	brazoLeonardoIZ = 0.0f,
+	pieLeonardoD = 0.0f,
+	pieLeonardoI = 0.0f,
+	giroManoLeonardoDX = 0.0f,
+	giroManoLeonardoDZ = 0.0f,
+	giroManoLeonardoIX = 0.0f,
+	giroManoLeonardoIZ = 0.0f,
+	pieLeonardoDY = 0.0f,
+	pieLeonardoDZ = 0.0f,
+	pieLeonardoIY = 0.0f,
+	pieLeonardoIZ = 0.0f,
+	manoLeonardoDX = 0.0f,
+	manoLeonardoDY = 0.0f,
+	manoLeonardoDZ = 0.0f,
+	manoLeonardoIX = 0.0f,
+	manoLeonardoIY = 0.0f,
+	manoLeonardoIZ = 0.0f,
+	leonardoX = 0.0f,
+	leonardoY = 0.0f,
+	leonardoZ = 0.0f,
+	giroLeonardo = 0.0f;
 float
 	piernaCaballoDDInc = 0.0f,
 	piernaCaballoDIInc = 0.0f,
@@ -130,7 +158,35 @@ float
 	caballoYInc = 0.0f,
 	caballoZInc = 0.0f,
 	giroCaballoInc = 0.0f,
-	subeCaballoInc = 0.0f;
+	subeCaballoInc = 0.0f,
+
+	cabezaLeonardoInc = 0.0f,
+	piernaLeonardoDInc = 0.0f,
+	piernaLeonardoIInc = 0.0f,
+	brazoLeonardoDXInc = 0.0f,
+	brazoLeonardoDZInc = 0.0f,
+	brazoLeonardoIXInc = 0.0f,
+	brazoLeonardoIZInc = 0.0f,
+	pieLeonardoDInc = 0.0f,
+	pieLeonardoIInc = 0.0f,
+	giroManoLeonardoDXInc = 0.0f,
+	giroManoLeonardoDZInc = 0.0f,
+	giroManoLeonardoIXInc = 0.0f,
+	giroManoLeonardoIZInc = 0.0f,
+	pieLeonardoDYInc = 0.0f,
+	pieLeonardoDZInc = 0.0f,
+	pieLeonardoIYInc = 0.0f,
+	pieLeonardoIZInc = 0.0f,
+	manoLeonardoDXInc = 0.0f,
+	manoLeonardoDYInc = 0.0f,
+	manoLeonardoDZInc = 0.0f,
+	manoLeonardoIXInc = 0.0f,
+	manoLeonardoIYInc = 0.0f,
+	manoLeonardoIZInc = 0.0f,
+	leonardoXInc = 0.0f,
+	leonardoYInc = 0.0f,
+	leonardoZInc = 0.0f,
+	giroLeonardoInc = 0.0f;
 
 #define MAX_FRAMES 10
 int i_max_steps = 60;
@@ -155,6 +211,35 @@ typedef struct _frame
 	float caballoZ;
 	float giroCaballo;
 	float subeCaballo;
+
+	float cabezaLeonardo;
+	float piernaLeonardoD;
+	float piernaLeonardoI;
+	float brazoLeonardoDX;
+	float brazoLeonardoDZ;
+	float brazoLeonardoIX;
+	float brazoLeonardoIZ;
+	float pieLeonardoD;
+	float pieLeonardoI;
+	float giroManoLeonardoDX;
+	float giroManoLeonardoDZ;
+	float giroManoLeonardoIX;
+	float giroManoLeonardoIZ;
+	float pieLeonardoDY;
+	float pieLeonardoDZ;
+	float pieLeonardoIY;
+	float pieLeonardoIZ;
+	float manoLeonardoDX;
+	float manoLeonardoDY;
+	float manoLeonardoDZ;
+	float manoLeonardoIX;
+	float manoLeonardoIY;
+	float manoLeonardoIZ;
+	float leonardoX;
+	float leonardoY;
+	float leonardoZ;
+	float giroLeonardo;
+	float inclinaLeonardo;
 
 }FRAME;
 
@@ -186,6 +271,34 @@ void saveFrame(void)
 	KeyFrame[FrameIndex].giroCaballo = giroCaballo;
 	KeyFrame[FrameIndex].subeCaballo = subeCaballo;
 
+	KeyFrame[FrameIndex].cabezaLeonardo = cabezaLeonardo;
+	KeyFrame[FrameIndex].piernaLeonardoD = piernaLeonardoD;
+	KeyFrame[FrameIndex].piernaLeonardoI = piernaLeonardoI;
+	KeyFrame[FrameIndex].brazoLeonardoDX = brazoLeonardoDX;
+	KeyFrame[FrameIndex].brazoLeonardoDZ = brazoLeonardoDZ;
+	KeyFrame[FrameIndex].brazoLeonardoIX = brazoLeonardoIX;
+	KeyFrame[FrameIndex].brazoLeonardoIZ = brazoLeonardoIZ;
+	KeyFrame[FrameIndex].pieLeonardoD = pieLeonardoD;
+	KeyFrame[FrameIndex].pieLeonardoI = pieLeonardoI;
+	KeyFrame[FrameIndex].giroManoLeonardoDX = giroManoLeonardoDX;
+	KeyFrame[FrameIndex].giroManoLeonardoDZ = giroManoLeonardoDZ;
+	KeyFrame[FrameIndex].giroManoLeonardoIX = giroManoLeonardoIX;
+	KeyFrame[FrameIndex].giroManoLeonardoIZ = giroManoLeonardoIZ;
+	KeyFrame[FrameIndex].pieLeonardoDY = pieLeonardoDY;
+	KeyFrame[FrameIndex].pieLeonardoDZ = pieLeonardoDZ;
+	KeyFrame[FrameIndex].pieLeonardoIZ = pieLeonardoIY;
+	KeyFrame[FrameIndex].pieLeonardoIZ = pieLeonardoIZ;
+	KeyFrame[FrameIndex].manoLeonardoDX = manoLeonardoDX;
+	KeyFrame[FrameIndex].manoLeonardoDY = manoLeonardoDY;
+	KeyFrame[FrameIndex].manoLeonardoDZ = manoLeonardoDZ;
+	KeyFrame[FrameIndex].manoLeonardoIX = manoLeonardoIX;
+	KeyFrame[FrameIndex].manoLeonardoIY = manoLeonardoIY;
+	KeyFrame[FrameIndex].manoLeonardoIZ = manoLeonardoIZ;
+	KeyFrame[FrameIndex].leonardoX = leonardoX;
+	KeyFrame[FrameIndex].leonardoY = leonardoY;
+	KeyFrame[FrameIndex].leonardoZ = leonardoZ;
+	KeyFrame[FrameIndex].giroLeonardo = giroLeonardo;
+
 	FrameIndex++;
 }
 
@@ -208,6 +321,34 @@ void resetElements(void)
 	caballoZ = KeyFrame[0].caballoZ;
 	giroCaballo = KeyFrame[0].giroCaballo;
 	subeCaballo = KeyFrame[0].subeCaballo;
+
+	cabezaLeonardo = KeyFrame[0].cabezaLeonardo;
+	piernaLeonardoD = KeyFrame[0].piernaLeonardoD;
+	piernaLeonardoI = KeyFrame[0].piernaLeonardoI;
+	brazoLeonardoDX = KeyFrame[0].brazoLeonardoDX;
+	brazoLeonardoDZ = KeyFrame[0].brazoLeonardoDZ;
+	brazoLeonardoIX = KeyFrame[0].brazoLeonardoIX;
+	brazoLeonardoIZ = KeyFrame[0].brazoLeonardoIZ;
+	pieLeonardoD = KeyFrame[0].pieLeonardoD;
+	pieLeonardoI = KeyFrame[0].pieLeonardoI;
+	giroManoLeonardoDX = KeyFrame[0].giroManoLeonardoDX;
+	giroManoLeonardoDZ = KeyFrame[0].giroManoLeonardoDZ;
+	giroManoLeonardoIX = KeyFrame[0].giroManoLeonardoIX;
+	giroManoLeonardoIZ = KeyFrame[0].giroManoLeonardoIZ;
+	pieLeonardoDY = KeyFrame[0].pieLeonardoDY;
+	pieLeonardoDZ = KeyFrame[0].pieLeonardoDZ;
+	pieLeonardoIY = KeyFrame[0].pieLeonardoIY;
+	pieLeonardoIZ = KeyFrame[0].pieLeonardoIZ;
+	manoLeonardoDX = KeyFrame[0].manoLeonardoDX;
+	manoLeonardoDY = KeyFrame[0].manoLeonardoDY;
+	manoLeonardoDZ = KeyFrame[0].manoLeonardoDZ;
+	manoLeonardoIX = KeyFrame[0].manoLeonardoIX;
+	manoLeonardoIY = KeyFrame[0].manoLeonardoIY;
+	manoLeonardoIZ = KeyFrame[0].manoLeonardoIZ;
+	leonardoX = KeyFrame[0].leonardoX;
+	leonardoY = KeyFrame[0].leonardoY;
+	leonardoZ = KeyFrame[0].leonardoZ;
+	giroLeonardo = KeyFrame[0].giroLeonardo;
 }
 
 void interpolation(void)
@@ -229,6 +370,34 @@ void interpolation(void)
 	caballoZInc = (KeyFrame[playIndex + 1].caballoZ - KeyFrame[playIndex].caballoZ) / i_max_steps;
 	giroCaballoInc = (KeyFrame[playIndex + 1].giroCaballo - KeyFrame[playIndex].giroCaballo) / i_max_steps;
 	subeCaballoInc = (KeyFrame[playIndex + 1].subeCaballo - KeyFrame[playIndex].subeCaballo) / i_max_steps;
+
+	cabezaLeonardoInc = (KeyFrame[playIndex + 1].cabezaLeonardo - KeyFrame[playIndex].cabezaLeonardo) / i_max_steps;
+	piernaLeonardoDInc = (KeyFrame[playIndex + 1].piernaLeonardoD - KeyFrame[playIndex].piernaLeonardoD) / i_max_steps;
+	piernaLeonardoIInc = (KeyFrame[playIndex + 1].piernaLeonardoI - KeyFrame[playIndex].piernaLeonardoI) / i_max_steps;
+	brazoLeonardoDXInc = (KeyFrame[playIndex + 1].brazoLeonardoDX - KeyFrame[playIndex].brazoLeonardoDX) / i_max_steps;
+	brazoLeonardoDZInc = (KeyFrame[playIndex + 1].brazoLeonardoDZ - KeyFrame[playIndex].brazoLeonardoDZ) / i_max_steps;
+	brazoLeonardoIXInc = (KeyFrame[playIndex + 1].brazoLeonardoIX - KeyFrame[playIndex].brazoLeonardoIX) / i_max_steps;
+	brazoLeonardoIZInc = (KeyFrame[playIndex + 1].brazoLeonardoIZ - KeyFrame[playIndex].brazoLeonardoIZ) / i_max_steps;
+	pieLeonardoDInc = (KeyFrame[playIndex + 1].pieLeonardoD - KeyFrame[playIndex].pieLeonardoD) / i_max_steps;
+	pieLeonardoIInc = (KeyFrame[playIndex + 1].pieLeonardoI - KeyFrame[playIndex].pieLeonardoI) / i_max_steps;
+	giroManoLeonardoDXInc = (KeyFrame[playIndex + 1].giroManoLeonardoDX - KeyFrame[playIndex].giroManoLeonardoDX) / i_max_steps;
+	giroManoLeonardoDZInc = (KeyFrame[playIndex + 1].giroManoLeonardoDZ - KeyFrame[playIndex].giroManoLeonardoDZ) / i_max_steps;
+	giroManoLeonardoIXInc = (KeyFrame[playIndex + 1].giroManoLeonardoIX - KeyFrame[playIndex].giroManoLeonardoIX) / i_max_steps;
+	giroManoLeonardoIZInc = (KeyFrame[playIndex + 1].giroManoLeonardoIZ - KeyFrame[playIndex].giroManoLeonardoIZ) / i_max_steps;
+	pieLeonardoDYInc = (KeyFrame[playIndex + 1].pieLeonardoDY - KeyFrame[playIndex].pieLeonardoDY) / i_max_steps;
+	pieLeonardoDZInc = (KeyFrame[playIndex + 1].pieLeonardoDZ - KeyFrame[playIndex].pieLeonardoDZ) / i_max_steps;
+	pieLeonardoIYInc = (KeyFrame[playIndex + 1].pieLeonardoIY - KeyFrame[playIndex].pieLeonardoIY) / i_max_steps;
+	pieLeonardoIZInc = (KeyFrame[playIndex + 1].pieLeonardoIZ - KeyFrame[playIndex].pieLeonardoIZ) / i_max_steps;
+	manoLeonardoDXInc = (KeyFrame[playIndex + 1].manoLeonardoDX - KeyFrame[playIndex].manoLeonardoDX) / i_max_steps;
+	manoLeonardoDYInc = (KeyFrame[playIndex + 1].manoLeonardoDY - KeyFrame[playIndex].manoLeonardoDY) / i_max_steps;
+	manoLeonardoDZInc = (KeyFrame[playIndex + 1].manoLeonardoDZ - KeyFrame[playIndex].manoLeonardoDZ) / i_max_steps;
+	manoLeonardoIXInc = (KeyFrame[playIndex + 1].manoLeonardoIX - KeyFrame[playIndex].manoLeonardoIX) / i_max_steps;
+	manoLeonardoIYInc = (KeyFrame[playIndex + 1].manoLeonardoIY - KeyFrame[playIndex].manoLeonardoIY) / i_max_steps;
+	manoLeonardoIZInc = (KeyFrame[playIndex + 1].manoLeonardoIZ - KeyFrame[playIndex].manoLeonardoIZ) / i_max_steps;
+	leonardoXInc = (KeyFrame[playIndex + 1].leonardoX - KeyFrame[playIndex].leonardoX) / i_max_steps;
+	leonardoYInc = (KeyFrame[playIndex + 1].leonardoY - KeyFrame[playIndex].leonardoY) / i_max_steps;
+	leonardoZInc = (KeyFrame[playIndex + 1].leonardoZ - KeyFrame[playIndex].leonardoZ) / i_max_steps;
+	giroLeonardoInc = (KeyFrame[playIndex + 1].giroLeonardo - KeyFrame[playIndex].giroLeonardo) / i_max_steps;
 }
 
 void animate(void)
@@ -272,6 +441,34 @@ void animate(void)
 			caballoZ += caballoZInc;
 			giroCaballo += giroCaballoInc;
 			subeCaballo += subeCaballoInc;
+
+			cabezaLeonardo += cabezaLeonardoInc;
+			piernaLeonardoD += piernaLeonardoDInc;
+			piernaLeonardoI += piernaLeonardoIInc;
+			brazoLeonardoDX += brazoLeonardoDXInc;
+			brazoLeonardoDZ += brazoLeonardoDZInc;
+			brazoLeonardoIX += brazoLeonardoIXInc;
+			brazoLeonardoIZ += brazoLeonardoIZInc;
+			pieLeonardoD += pieLeonardoDInc;
+			pieLeonardoI += pieLeonardoIInc;
+			giroManoLeonardoDX += giroManoLeonardoDXInc;
+			giroManoLeonardoDZ += giroManoLeonardoDZInc;
+			giroManoLeonardoIX += giroManoLeonardoIXInc;
+			giroManoLeonardoIZ += giroManoLeonardoIZInc;
+			pieLeonardoDY += pieLeonardoDYInc;
+			pieLeonardoDZ += pieLeonardoDZInc;
+			pieLeonardoIY += pieLeonardoIYInc;
+			pieLeonardoIZ += pieLeonardoIZInc;
+			manoLeonardoDX += manoLeonardoDXInc;
+			manoLeonardoDY += manoLeonardoDYInc;
+			manoLeonardoDZ += manoLeonardoDZInc;
+			manoLeonardoIX += manoLeonardoIXInc;
+			manoLeonardoIY += manoLeonardoIYInc;
+			manoLeonardoIZ += manoLeonardoIZInc;
+			leonardoX += leonardoXInc;
+			leonardoY += leonardoYInc;
+			leonardoZ += leonardoZInc;
+			giroLeonardo += giroLeonardoInc;
 
 			i_curr_steps++;
 		}
@@ -676,6 +873,34 @@ int main()
 	KeyFrame[0].giroCaballo = 0.0f;
 	KeyFrame[0].subeCaballo = 0.0f;
 
+	KeyFrame[0].cabezaLeonardo = 45.0f;
+	KeyFrame[0].piernaLeonardoD = 0.0f;
+	KeyFrame[0].piernaLeonardoI = 0.0f;
+	KeyFrame[0].brazoLeonardoDX = 0.0f;
+	KeyFrame[0].brazoLeonardoDZ = 80.0f;
+	KeyFrame[0].brazoLeonardoIX = 0.0f;
+	KeyFrame[0].brazoLeonardoIZ = -80.0f;
+	KeyFrame[0].pieLeonardoD = 0.0f;
+	KeyFrame[0].pieLeonardoI = 0.0f;
+	KeyFrame[0].giroManoLeonardoDX = 0.0f;
+	KeyFrame[0].giroManoLeonardoDZ = 80.0f;
+	KeyFrame[0].giroManoLeonardoIX = 0.0f;
+	KeyFrame[0].giroManoLeonardoIZ = -80.0f;
+	KeyFrame[0].pieLeonardoDY = 0.0f;
+	KeyFrame[0].pieLeonardoDZ = 0.0f;
+	KeyFrame[0].pieLeonardoIY = 0.0f;
+	KeyFrame[0].pieLeonardoIZ = 0.0f;
+	KeyFrame[0].manoLeonardoDX = 4.2f;
+	KeyFrame[0].manoLeonardoDY = -5.3f;
+	KeyFrame[0].manoLeonardoDZ = 0.0f;
+	KeyFrame[0].manoLeonardoIX = -4.2f;
+	KeyFrame[0].manoLeonardoIY = -5.1f;
+	KeyFrame[0].manoLeonardoIZ = 0.0f;
+	KeyFrame[0].leonardoX = 0.0f;
+	KeyFrame[0].leonardoY = 0.0f;
+	KeyFrame[0].leonardoZ = 0.0f;
+	KeyFrame[0].giroLeonardo = 0.0f;
+
 	KeyFrame[1].piernaCaballoDD = 45.0f;
 	KeyFrame[1].piernaCaballoDI = -45.0f;
 	KeyFrame[1].piernaCaballoTD = -30.0f;
@@ -693,6 +918,34 @@ int main()
 	KeyFrame[1].caballoZ = 0.0f;
 	KeyFrame[1].giroCaballo = 0.0f;
 	KeyFrame[1].subeCaballo = 0.0f;
+
+	KeyFrame[1].cabezaLeonardo = 60.0f;
+	KeyFrame[1].piernaLeonardoD = 20.0f;
+	KeyFrame[1].piernaLeonardoI = -20.0f;
+	KeyFrame[1].brazoLeonardoDX = -20.0f;
+	KeyFrame[1].brazoLeonardoDZ = 80.0f;
+	KeyFrame[1].brazoLeonardoIX = 20.0f;
+	KeyFrame[1].brazoLeonardoIZ = -80.0f;
+	KeyFrame[1].pieLeonardoD = 20.0f;
+	KeyFrame[1].pieLeonardoI = -20.0f;
+	KeyFrame[1].giroManoLeonardoDX = -20.0f;
+	KeyFrame[1].giroManoLeonardoDZ = 80.0f;
+	KeyFrame[1].giroManoLeonardoIX = 20.0f;
+	KeyFrame[1].giroManoLeonardoIZ = -80.0f;
+	KeyFrame[1].pieLeonardoDY = 0.0f;
+	KeyFrame[1].pieLeonardoDZ = -3.0f;
+	KeyFrame[1].pieLeonardoIY = 0.0f;
+	KeyFrame[1].pieLeonardoIZ = 3.0f;
+	KeyFrame[1].manoLeonardoDX = 4.2f;
+	KeyFrame[1].manoLeonardoDY = -5.3f;
+	KeyFrame[1].manoLeonardoDZ = 2.0f;
+	KeyFrame[1].manoLeonardoIX = -4.2f;
+	KeyFrame[1].manoLeonardoIY = -5.1f;
+	KeyFrame[1].manoLeonardoIZ = -2.0f;
+	KeyFrame[1].leonardoX = 0.0f;
+	KeyFrame[1].leonardoY = 0.0f;
+	KeyFrame[1].leonardoZ = 10.0f;
+	KeyFrame[1].giroLeonardo = 0.0f;
 
 	KeyFrame[2].piernaCaballoDD = -45.0f;
 	KeyFrame[2].piernaCaballoDI = 45.0f;
@@ -712,6 +965,34 @@ int main()
 	KeyFrame[2].giroCaballo = 0.0f;
 	KeyFrame[2].subeCaballo = 0.0f;
 
+	KeyFrame[2].cabezaLeonardo = 75.0f;
+	KeyFrame[2].piernaLeonardoD = -20.0f;
+	KeyFrame[2].piernaLeonardoI = 20.0f;
+	KeyFrame[2].brazoLeonardoDX = 20.0f;
+	KeyFrame[2].brazoLeonardoDZ = 80.0f;
+	KeyFrame[2].brazoLeonardoIX = -20.0f;
+	KeyFrame[2].brazoLeonardoIZ = -80.0f;
+	KeyFrame[2].pieLeonardoD = -20.0f;
+	KeyFrame[2].pieLeonardoI = 20.0f;
+	KeyFrame[2].giroManoLeonardoDX = 20.0f;
+	KeyFrame[2].giroManoLeonardoDZ = 80.0f;
+	KeyFrame[2].giroManoLeonardoIX = -20.0f;
+	KeyFrame[2].giroManoLeonardoIZ = -80.0f;
+	KeyFrame[2].pieLeonardoDY = 0.0f;
+	KeyFrame[2].pieLeonardoDZ = 3.0f;
+	KeyFrame[2].pieLeonardoIY = 0.0f;
+	KeyFrame[2].pieLeonardoIZ = -3.0f;
+	KeyFrame[2].manoLeonardoDX = 4.2f;
+	KeyFrame[2].manoLeonardoDY = -5.3f;
+	KeyFrame[2].manoLeonardoDZ = -2.0f;
+	KeyFrame[2].manoLeonardoIX = -4.2f;
+	KeyFrame[2].manoLeonardoIY = -5.1f;
+	KeyFrame[2].manoLeonardoIZ = 2.0f;
+	KeyFrame[2].leonardoX = 0.0f;
+	KeyFrame[2].leonardoY = 0.0f;
+	KeyFrame[2].leonardoZ = 30.0f;
+	KeyFrame[2].giroLeonardo = 0.0f;
+
 	KeyFrame[3].piernaCaballoDD = 45.0f;
 	KeyFrame[3].piernaCaballoDI = -45.0f;
 	KeyFrame[3].piernaCaballoTD = -30.0f;
@@ -729,6 +1010,34 @@ int main()
 	KeyFrame[3].caballoZ = 0.0f;
 	KeyFrame[3].giroCaballo = 0.0f;
 	KeyFrame[3].subeCaballo = 0.0f;
+
+	KeyFrame[3].cabezaLeonardo = 90.0f;
+	KeyFrame[3].piernaLeonardoD = 20.0f;
+	KeyFrame[3].piernaLeonardoI = -20.0f;
+	KeyFrame[3].brazoLeonardoDX = -20.0f;
+	KeyFrame[3].brazoLeonardoDZ = 80.0f;
+	KeyFrame[3].brazoLeonardoIX = 20.0f;
+	KeyFrame[3].brazoLeonardoIZ = -80.0f;
+	KeyFrame[3].pieLeonardoD = 20.0f;
+	KeyFrame[3].pieLeonardoI = -20.0f;
+	KeyFrame[3].giroManoLeonardoDX = -20.0f;
+	KeyFrame[3].giroManoLeonardoDZ = 80.0f;
+	KeyFrame[3].giroManoLeonardoIX = 20.0f;
+	KeyFrame[3].giroManoLeonardoIZ = -80.0f;
+	KeyFrame[3].pieLeonardoDY = 0.0f;
+	KeyFrame[3].pieLeonardoDZ = -3.0f;
+	KeyFrame[3].pieLeonardoIY = 0.0f;
+	KeyFrame[3].pieLeonardoIZ = 3.0f;
+	KeyFrame[3].manoLeonardoDX = 4.2f;
+	KeyFrame[3].manoLeonardoDY = -5.3f;
+	KeyFrame[3].manoLeonardoDZ = 2.0f;
+	KeyFrame[3].manoLeonardoIX = -4.2f;
+	KeyFrame[3].manoLeonardoIY = -5.1f;
+	KeyFrame[3].manoLeonardoIZ = -2.0f;
+	KeyFrame[3].leonardoX = 0.0f;
+	KeyFrame[3].leonardoY = 0.0f;
+	KeyFrame[3].leonardoZ = 50.0f;
+	KeyFrame[3].giroLeonardo = 0.0f;
 
 	KeyFrame[4].piernaCaballoDD = 0.0f;
 	KeyFrame[4].piernaCaballoDI = 0.0f;
@@ -748,6 +1057,34 @@ int main()
 	KeyFrame[4].giroCaballo = 0.0f;
 	KeyFrame[4].subeCaballo = -65.0f;
 
+	KeyFrame[4].cabezaLeonardo = 0.0f;
+	KeyFrame[4].piernaLeonardoD = 0.0f;
+	KeyFrame[4].piernaLeonardoI = 0.0f;
+	KeyFrame[4].brazoLeonardoDX = 0.0f;
+	KeyFrame[4].brazoLeonardoDZ = 80.0f;
+	KeyFrame[4].brazoLeonardoIX = 0.0f;
+	KeyFrame[4].brazoLeonardoIZ = -80.0f;
+	KeyFrame[4].pieLeonardoD = 0.0f;
+	KeyFrame[4].pieLeonardoI = 0.0f;
+	KeyFrame[4].giroManoLeonardoDX = 0.0f;
+	KeyFrame[4].giroManoLeonardoDZ = 80.0f;
+	KeyFrame[4].giroManoLeonardoIX = 0.0f;
+	KeyFrame[4].giroManoLeonardoIZ = -80.0f;
+	KeyFrame[4].pieLeonardoDY = 0.0f;
+	KeyFrame[4].pieLeonardoDZ = 0.0f;
+	KeyFrame[4].pieLeonardoIY = 0.0f;
+	KeyFrame[4].pieLeonardoIZ = 0.0f;
+	KeyFrame[4].manoLeonardoDX = 4.2f;
+	KeyFrame[4].manoLeonardoDY = -5.3f;
+	KeyFrame[4].manoLeonardoDZ = 0.0f;
+	KeyFrame[4].manoLeonardoIX = -4.2f;
+	KeyFrame[4].manoLeonardoIY = -5.1f;
+	KeyFrame[4].manoLeonardoIZ = -0.0f;
+	KeyFrame[4].leonardoX = 0.0f;
+	KeyFrame[4].leonardoY = 0.0f;
+	KeyFrame[4].leonardoZ = 50.0f;
+	KeyFrame[4].giroLeonardo = 90.0f;
+
 	KeyFrame[5].piernaCaballoDD = -45.0f;
 	KeyFrame[5].piernaCaballoDI = 0.0f;
 	KeyFrame[5].piernaCaballoTD = 30.0f;
@@ -765,6 +1102,34 @@ int main()
 	KeyFrame[5].caballoZ = 0.0f;
 	KeyFrame[5].giroCaballo = 0.0f;
 	KeyFrame[5].subeCaballo = 0.0f;
+
+	KeyFrame[5].cabezaLeonardo = 0.0f;
+	KeyFrame[5].piernaLeonardoD = 20.0f;
+	KeyFrame[5].piernaLeonardoI = -20.0f;
+	KeyFrame[5].brazoLeonardoDX = -20.0f;
+	KeyFrame[5].brazoLeonardoDZ = 80.0f;
+	KeyFrame[5].brazoLeonardoIX = 20.0f;
+	KeyFrame[5].brazoLeonardoIZ = -80.0f;
+	KeyFrame[5].pieLeonardoD = 20.0f;
+	KeyFrame[5].pieLeonardoI = -20.0f;
+	KeyFrame[5].giroManoLeonardoDX = -20.0f;
+	KeyFrame[5].giroManoLeonardoDZ = 80.0f;
+	KeyFrame[5].giroManoLeonardoIX = 20.0f;
+	KeyFrame[5].giroManoLeonardoIZ = -80.0f;
+	KeyFrame[5].pieLeonardoDY = 0.0f;
+	KeyFrame[5].pieLeonardoDZ = -3.0f;
+	KeyFrame[5].pieLeonardoIY = 0.0f;
+	KeyFrame[5].pieLeonardoIZ = 3.0f;
+	KeyFrame[5].manoLeonardoDX = 4.2f;
+	KeyFrame[5].manoLeonardoDY = -5.3f;
+	KeyFrame[5].manoLeonardoDZ = 2.0f;
+	KeyFrame[5].manoLeonardoIX = -4.2f;
+	KeyFrame[5].manoLeonardoIY = -5.1f;
+	KeyFrame[5].manoLeonardoIZ = -2.0f;
+	KeyFrame[5].leonardoX = 10.0f;
+	KeyFrame[5].leonardoY = 0.0f;
+	KeyFrame[5].leonardoZ = 50.0f;
+	KeyFrame[5].giroLeonardo = 90.0f;
 
 	KeyFrame[6].piernaCaballoDD = 45.0f;
 	KeyFrame[6].piernaCaballoDI = -45.0f;
@@ -784,6 +1149,34 @@ int main()
 	KeyFrame[6].giroCaballo = 0.0f;
 	KeyFrame[6].subeCaballo = 0.0f;
 
+	KeyFrame[6].cabezaLeonardo = 0.0f;
+	KeyFrame[6].piernaLeonardoD = -20.0f;
+	KeyFrame[6].piernaLeonardoI = 20.0f;
+	KeyFrame[6].brazoLeonardoDX = 20.0f;
+	KeyFrame[6].brazoLeonardoDZ = 80.0f;
+	KeyFrame[6].brazoLeonardoIX = -20.0f;
+	KeyFrame[6].brazoLeonardoIZ = -80.0f;
+	KeyFrame[6].pieLeonardoD = -20.0f;
+	KeyFrame[6].pieLeonardoI = 20.0f;
+	KeyFrame[6].giroManoLeonardoDX = 20.0f;
+	KeyFrame[6].giroManoLeonardoDZ = 80.0f;
+	KeyFrame[6].giroManoLeonardoIX = -20.0f;
+	KeyFrame[6].giroManoLeonardoIZ = -80.0f;
+	KeyFrame[6].pieLeonardoDY = 0.0f;
+	KeyFrame[6].pieLeonardoDZ = 3.0f;
+	KeyFrame[6].pieLeonardoIY = 0.0f;
+	KeyFrame[6].pieLeonardoIZ = -3.0f;
+	KeyFrame[6].manoLeonardoDX = 4.2f;
+	KeyFrame[6].manoLeonardoDY = -5.3f;
+	KeyFrame[6].manoLeonardoDZ = -2.0f;
+	KeyFrame[6].manoLeonardoIX = -4.2f;
+	KeyFrame[6].manoLeonardoIY = -5.1f;
+	KeyFrame[6].manoLeonardoIZ = 2.0f;
+	KeyFrame[6].leonardoX = 30.0f;
+	KeyFrame[6].leonardoY = 0.0f;
+	KeyFrame[6].leonardoZ = 50.0f;
+	KeyFrame[6].giroLeonardo = 90.0f;
+
 	KeyFrame[7].piernaCaballoDD = -45.0f;
 	KeyFrame[7].piernaCaballoDI = 45.0f;
 	KeyFrame[7].piernaCaballoTD = 30.0f;
@@ -801,6 +1194,34 @@ int main()
 	KeyFrame[7].caballoZ = 0.0f;
 	KeyFrame[7].giroCaballo = 0.0f;
 	KeyFrame[7].subeCaballo = 0.0f;
+
+	KeyFrame[7].cabezaLeonardo = 0.0f;
+	KeyFrame[7].piernaLeonardoD = 0.0f;
+	KeyFrame[7].piernaLeonardoI = 0.0f;
+	KeyFrame[7].brazoLeonardoDX = 0.0f;
+	KeyFrame[7].brazoLeonardoDZ = 80.0f;
+	KeyFrame[7].brazoLeonardoIX = 0.0f;
+	KeyFrame[7].brazoLeonardoIZ = -80.0f;
+	KeyFrame[7].pieLeonardoD = 0.0f;
+	KeyFrame[7].pieLeonardoI = 0.0f;
+	KeyFrame[7].giroManoLeonardoDX = 0.0f;
+	KeyFrame[7].giroManoLeonardoDZ = 80.0f;
+	KeyFrame[7].giroManoLeonardoIX = 0.0f;
+	KeyFrame[7].giroManoLeonardoIZ = -80.0f;
+	KeyFrame[7].pieLeonardoDY = 0.0f;
+	KeyFrame[7].pieLeonardoDZ = 0.0f;
+	KeyFrame[7].pieLeonardoIY = 0.0f;
+	KeyFrame[7].pieLeonardoIZ = 0.0f;
+	KeyFrame[7].manoLeonardoDX = 4.2f;
+	KeyFrame[7].manoLeonardoDY = -5.3f;
+	KeyFrame[7].manoLeonardoDZ = 0.0f;
+	KeyFrame[7].manoLeonardoIX = -4.2f;
+	KeyFrame[7].manoLeonardoIY = -5.1f;
+	KeyFrame[7].manoLeonardoIZ = -0.0f;
+	KeyFrame[7].leonardoX = 30.0f;
+	KeyFrame[7].leonardoY = 0.0f;
+	KeyFrame[7].leonardoZ = 50.0f;
+	KeyFrame[7].giroLeonardo = 90.0f;
 
 	KeyFrame[8].piernaCaballoDD = -45.0f;
 	KeyFrame[8].piernaCaballoDI = -45.0f;
@@ -820,6 +1241,34 @@ int main()
 	KeyFrame[8].giroCaballo = 0.0f;
 	KeyFrame[8].subeCaballo = 0.0f;
 
+	KeyFrame[8].cabezaLeonardo = 0.0f;
+	KeyFrame[8].piernaLeonardoD = -90.0f;
+	KeyFrame[8].piernaLeonardoI = -90.0f;
+	KeyFrame[8].brazoLeonardoDX = -45.0f;
+	KeyFrame[8].brazoLeonardoDZ = 80.0f;
+	KeyFrame[8].brazoLeonardoIX = -45.0f;
+	KeyFrame[8].brazoLeonardoIZ = -80.0f;
+	KeyFrame[8].pieLeonardoD = 0.0f;
+	KeyFrame[8].pieLeonardoI = 0.0f;
+	KeyFrame[8].giroManoLeonardoDX = 180.0f;
+	KeyFrame[8].giroManoLeonardoDZ = 180.0f;
+	KeyFrame[8].giroManoLeonardoIX = 180.0f;
+	KeyFrame[8].giroManoLeonardoIZ = -180.0f;
+	KeyFrame[8].pieLeonardoDY = 8.0f;
+	KeyFrame[8].pieLeonardoDZ = 8.0f;
+	KeyFrame[8].pieLeonardoIY = 8.0f;
+	KeyFrame[8].pieLeonardoIZ = 8.0f;
+	KeyFrame[8].manoLeonardoDX = 4.2f;
+	KeyFrame[8].manoLeonardoDY = -5.3f;
+	KeyFrame[8].manoLeonardoDZ = 6.0f;
+	KeyFrame[8].manoLeonardoIX = -4.2f;
+	KeyFrame[8].manoLeonardoIY = -5.1f;
+	KeyFrame[8].manoLeonardoIZ = 6.0f;
+	KeyFrame[8].leonardoX = 45.0f;
+	KeyFrame[8].leonardoY = -6.0f;
+	KeyFrame[8].leonardoZ = 50.0f;
+	KeyFrame[8].giroLeonardo = 180.0f;
+
 	KeyFrame[9].piernaCaballoDD = 0.0f;
 	KeyFrame[9].piernaCaballoDI = 0.0f;
 	KeyFrame[9].piernaCaballoTD = 0.0f;
@@ -837,6 +1286,34 @@ int main()
 	KeyFrame[9].caballoZ = 0.0f;
 	KeyFrame[9].giroCaballo = 0.0f;
 	KeyFrame[9].subeCaballo = 0.0f;
+
+	KeyFrame[9].cabezaLeonardo = 0.0f;
+	KeyFrame[9].piernaLeonardoD = -90.0f;
+	KeyFrame[9].piernaLeonardoI = -90.0f;
+	KeyFrame[9].brazoLeonardoDX = -45.0f;
+	KeyFrame[9].brazoLeonardoDZ = 80.0f;
+	KeyFrame[9].brazoLeonardoIX = -45.0f;
+	KeyFrame[9].brazoLeonardoIZ = -80.0f;
+	KeyFrame[9].pieLeonardoD = 0.0f;
+	KeyFrame[9].pieLeonardoI = 0.0f;
+	KeyFrame[9].giroManoLeonardoDX = 160.0f;
+	KeyFrame[9].giroManoLeonardoDZ = 90.0f;
+	KeyFrame[9].giroManoLeonardoIX = 160.0f;
+	KeyFrame[9].giroManoLeonardoIZ = -90.0f;
+	KeyFrame[9].pieLeonardoDY = 8.0f;
+	KeyFrame[9].pieLeonardoDZ = 8.0f;
+	KeyFrame[9].pieLeonardoIY = 8.0f;
+	KeyFrame[9].pieLeonardoIZ = 8.0f;
+	KeyFrame[9].manoLeonardoDX = 4.2f;
+	KeyFrame[9].manoLeonardoDY = -5.3f;
+	KeyFrame[9].manoLeonardoDZ = 6.0f;
+	KeyFrame[9].manoLeonardoIX = -4.2f;
+	KeyFrame[9].manoLeonardoIY = -5.1f;
+	KeyFrame[9].manoLeonardoIZ = 6.0f;
+	KeyFrame[9].leonardoX = 45.0f;
+	KeyFrame[9].leonardoY = -6.0f;
+	KeyFrame[9].leonardoZ = 50.0f;
+	KeyFrame[9].giroLeonardo = 180.0f;
 
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -1307,57 +1784,71 @@ int main()
 		bicicleta.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
-		staticShader.setMat4("model", model);
-		leonardo.Draw(staticShader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
-		staticShader.setMat4("model", model);
-		leonardoTorso.Draw(staticShader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		model = glm::translate(model, glm::vec3(175.0f + leonardoX, 18.0f + leonardoY, 175.0f + leonardoZ));
+		tmp = model = glm::rotate(model, glm::radians(giroLeonardo), glm::vec3(0.0f, 1.0f, 0.0f));	//Dependencia tmp
 		staticShader.setMat4("model", model);
 		leonardoIngle.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		model = glm::translate(tmp, glm::vec3(0.0f, 12.5f, 0.1f));
+		model = glm::rotate(model, glm::radians(cabezaLeonardo), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		leonardo.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-0.1f, 1.0f, -0.5f));
+		staticShader.setMat4("model", model);
+		leonardoTorso.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-3.5f, 10.7f, -0.6f));
+		model = glm::rotate(model, glm::radians(brazoLeonardoDX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(brazoLeonardoDZ), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		leonardoBrazoD.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		model = glm::translate(tmp, glm::vec3(3.5f, 10.6f, -0.5f));
+		model = glm::rotate(model, glm::radians(brazoLeonardoIX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(brazoLeonardoIZ), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		leonardoBrazoI.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		model = glm::translate(tmp, glm::vec3(-8.8f+manoLeonardoDX, 10.9f+manoLeonardoDY, -0.7f+manoLeonardoDZ));
+		model = glm::rotate(model, glm::radians(giroManoLeonardoDX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroManoLeonardoDZ), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		leonardoManoD.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		model = glm::translate(tmp, glm::vec3(8.6f+manoLeonardoIX, 10.6f+manoLeonardoIY, -0.5f+manoLeonardoIZ));
+		model = glm::rotate(model, glm::radians(giroManoLeonardoIX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroManoLeonardoIZ), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
 		leonardoManoI.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		model = glm::translate(tmp, glm::vec3(-2.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(piernaLeonardoD), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		leonardoPiernaD.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		model = glm::translate(tmp, glm::vec3(2.0f, 0.0f, -0.1f));
+		model = glm::rotate(model, glm::radians(piernaLeonardoI), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		leonardoPiernaI.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		model = glm::translate(tmp, glm::vec3(-1.9f, -8.0f + pieLeonardoDY, 1.4f + pieLeonardoDZ));
+		model = glm::rotate(model, glm::radians(pieLeonardoD), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		leonardoPieD.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(150.0f, 0.0f, -150.0f));
+		model = glm::translate(tmp, glm::vec3(2.0f, -8.0f + pieLeonardoIY, -0.1f + pieLeonardoIZ));
+		model = glm::rotate(model, glm::radians(pieLeonardoI), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		leonardoPieI.Draw(staticShader);
 
