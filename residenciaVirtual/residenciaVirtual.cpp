@@ -144,7 +144,15 @@ float
 
 	giroColumpio = 0.0f,
 	pieLeonardoColumpioD = 0.0f,
-	pieLeonardoColumpioI = 0.0f;
+	pieLeonardoColumpioI = 0.0f,
+
+	pelotaX = 0.0f,
+	pelotaY = 0.0f,
+	pelotaZ = 0.0f,
+	manoLeonardoPelotaD1 = 0.0f,
+	manoLeonardoPelotaI1 = 0.0f,
+	manoLeonardoPelotaD2 = 0.0f,
+	manoLeonardoPelotaI2 = 0.0f;
 float
 	piernaCaballoDDInc = 0.0f,
 	piernaCaballoDIInc = 0.0f,
@@ -194,7 +202,15 @@ float
 
 	giroColumpioInc = 0.0f,
 	pieLeonardoColumpioDInc = 0.0f,
-	pieLeonardoColumpioIInc = 0.0f;
+	pieLeonardoColumpioIInc = 0.0f,
+
+	pelotaXInc = 0.0f,
+	pelotaYInc = 0.0f,
+	pelotaZInc = 0.0f,
+	manoLeonardoPelotaD1Inc = 0.0f,
+	manoLeonardoPelotaI1Inc = 0.0f,
+	manoLeonardoPelotaD2Inc = 0.0f,
+	manoLeonardoPelotaI2Inc = 0.0f;
 
 #define MAX_FRAMES 10
 int i_max_steps = 60;
@@ -252,6 +268,14 @@ typedef struct _frame
 	float giroColumpio;
 	float pieLeonardoColumpioD;
 	float pieLeonardoColumpioI;
+
+	float pelotaX = 0.0f;
+	float pelotaY = 0.0f;
+	float pelotaZ = 0.0f;
+	float manoLeonardoPelotaD1 = 0.0f;
+	float manoLeonardoPelotaI1 = 0.0f;
+	float manoLeonardoPelotaD2 = 0.0f;
+	float manoLeonardoPelotaI2 = 0.0f;
 
 }FRAME;
 
@@ -315,6 +339,14 @@ void saveFrame(void)
 	KeyFrame[FrameIndex].pieLeonardoColumpioD = pieLeonardoColumpioD;
 	KeyFrame[FrameIndex].pieLeonardoColumpioI = pieLeonardoColumpioI;
 
+	KeyFrame[FrameIndex].pelotaX = pelotaX;
+	KeyFrame[FrameIndex].pelotaY = pelotaY;
+	KeyFrame[FrameIndex].pelotaZ = pelotaZ;
+	KeyFrame[FrameIndex].manoLeonardoPelotaD1 = manoLeonardoPelotaD1;
+	KeyFrame[FrameIndex].manoLeonardoPelotaI1 = manoLeonardoPelotaI1;
+	KeyFrame[FrameIndex].manoLeonardoPelotaD2 = manoLeonardoPelotaD2;
+	KeyFrame[FrameIndex].manoLeonardoPelotaI2 = manoLeonardoPelotaI2;
+
 	FrameIndex++;
 }
 
@@ -369,6 +401,14 @@ void resetElements(void)
 	giroColumpio = KeyFrame[0].giroColumpio;
 	pieLeonardoColumpioD = KeyFrame[0].pieLeonardoColumpioD;
 	pieLeonardoColumpioI = KeyFrame[0].pieLeonardoColumpioI;
+
+	pelotaX = KeyFrame[0].pelotaX;
+	pelotaY = KeyFrame[0].pelotaY;
+	pelotaZ = KeyFrame[0].pelotaZ;
+	manoLeonardoPelotaD1 = KeyFrame[0].manoLeonardoPelotaD1;
+	manoLeonardoPelotaI1 = KeyFrame[0].manoLeonardoPelotaI1;
+	manoLeonardoPelotaD2 = KeyFrame[0].manoLeonardoPelotaD2;
+	manoLeonardoPelotaI2 = KeyFrame[0].manoLeonardoPelotaI2;
 }
 
 void interpolation(void)
@@ -422,6 +462,14 @@ void interpolation(void)
 	giroColumpioInc = (KeyFrame[playIndex + 1].giroColumpio - KeyFrame[playIndex].giroColumpio) / i_max_steps;
 	pieLeonardoColumpioDInc = (KeyFrame[playIndex + 1].pieLeonardoColumpioD - KeyFrame[playIndex].pieLeonardoColumpioD) / i_max_steps;
 	pieLeonardoColumpioIInc = (KeyFrame[playIndex + 1].pieLeonardoColumpioI - KeyFrame[playIndex].pieLeonardoColumpioI) / i_max_steps;
+
+	pelotaXInc = (KeyFrame[playIndex + 1].pelotaX - KeyFrame[playIndex].pelotaX) / i_max_steps;
+	pelotaYInc = (KeyFrame[playIndex + 1].pelotaY - KeyFrame[playIndex].pelotaY) / i_max_steps;
+	pelotaZInc = (KeyFrame[playIndex + 1].pelotaZ - KeyFrame[playIndex].pelotaZ) / i_max_steps;
+	manoLeonardoPelotaD1Inc = (KeyFrame[playIndex + 1].manoLeonardoPelotaD1 - KeyFrame[playIndex].manoLeonardoPelotaD1) / i_max_steps;
+	manoLeonardoPelotaI1Inc = (KeyFrame[playIndex + 1].manoLeonardoPelotaI1 - KeyFrame[playIndex].manoLeonardoPelotaI1) / i_max_steps;
+	manoLeonardoPelotaD2Inc = (KeyFrame[playIndex + 1].manoLeonardoPelotaD2 - KeyFrame[playIndex].manoLeonardoPelotaD2) / i_max_steps;
+	manoLeonardoPelotaI2Inc = (KeyFrame[playIndex + 1].manoLeonardoPelotaI2 - KeyFrame[playIndex].manoLeonardoPelotaI2) / i_max_steps;
 }
 
 void animate(void)
@@ -497,6 +545,14 @@ void animate(void)
 			giroColumpio += giroColumpioInc;
 			pieLeonardoColumpioD += pieLeonardoColumpioDInc;
 			pieLeonardoColumpioI += pieLeonardoColumpioIInc;
+
+			pelotaX += pelotaXInc,
+			pelotaY += pelotaYInc,
+			pelotaZ += pelotaZInc,
+			manoLeonardoPelotaD1 += manoLeonardoPelotaD1Inc,
+			manoLeonardoPelotaI1 += manoLeonardoPelotaI1Inc,
+			manoLeonardoPelotaD2 += manoLeonardoPelotaD2Inc,
+			manoLeonardoPelotaI2 += manoLeonardoPelotaI2Inc;
 
 			i_curr_steps++;
 		}
@@ -933,6 +989,14 @@ int main()
 	KeyFrame[0].pieLeonardoColumpioD = 0.0f;
 	KeyFrame[0].pieLeonardoColumpioI = 0.0f;
 
+	KeyFrame[0].pelotaX = 0.0f;
+	KeyFrame[0].pelotaY = 0.0f;
+	KeyFrame[0].pelotaZ = 0.0f;
+	KeyFrame[0].manoLeonardoPelotaD1 = 0.0f;
+	KeyFrame[0].manoLeonardoPelotaI1 = 0.0f;
+	KeyFrame[0].manoLeonardoPelotaD2 = 45.0f;
+	KeyFrame[0].manoLeonardoPelotaI2 = 45.0f;
+
 	KeyFrame[1].piernaCaballoDD = 45.0f;
 	KeyFrame[1].piernaCaballoDI = -45.0f;
 	KeyFrame[1].piernaCaballoTD = -30.0f;
@@ -982,6 +1046,14 @@ int main()
 	KeyFrame[1].giroColumpio = -10.0f;
 	KeyFrame[1].pieLeonardoColumpioD = -20.0f;
 	KeyFrame[1].pieLeonardoColumpioI = -20.0f;
+
+	KeyFrame[1].pelotaX = -37.5f;
+	KeyFrame[1].pelotaY = 40.0f;
+	KeyFrame[1].pelotaZ = 0.0f;
+	KeyFrame[1].manoLeonardoPelotaD1 = 45.0f;
+	KeyFrame[1].manoLeonardoPelotaI1 = 45.0f;
+	KeyFrame[1].manoLeonardoPelotaD2 = 45.0f;
+	KeyFrame[1].manoLeonardoPelotaI2 = 45.0f;
 
 	KeyFrame[2].piernaCaballoDD = -45.0f;
 	KeyFrame[2].piernaCaballoDI = 45.0f;
@@ -1033,6 +1105,14 @@ int main()
 	KeyFrame[2].pieLeonardoColumpioD = 20.0f;
 	KeyFrame[2].pieLeonardoColumpioI = 20.0f;
 
+	KeyFrame[2].pelotaX = -75.0f;
+	KeyFrame[2].pelotaY = 0.0f;
+	KeyFrame[2].pelotaZ = 0.0f;
+	KeyFrame[2].manoLeonardoPelotaD1 = 45.0f;
+	KeyFrame[2].manoLeonardoPelotaI1 = 45.0f;
+	KeyFrame[2].manoLeonardoPelotaD2 = 0.0f;
+	KeyFrame[2].manoLeonardoPelotaI2 = 0.0f;
+
 	KeyFrame[3].piernaCaballoDD = 45.0f;
 	KeyFrame[3].piernaCaballoDI = -45.0f;
 	KeyFrame[3].piernaCaballoTD = -30.0f;
@@ -1082,6 +1162,14 @@ int main()
 	KeyFrame[3].giroColumpio = -30.0f;
 	KeyFrame[3].pieLeonardoColumpioD = -40.0f;
 	KeyFrame[3].pieLeonardoColumpioI = -40.0f;
+
+	KeyFrame[3].pelotaX = -37.5f;
+	KeyFrame[3].pelotaY = 40.0f;
+	KeyFrame[3].pelotaZ = 0.0f;
+	KeyFrame[3].manoLeonardoPelotaD1 = 45.0f;
+	KeyFrame[3].manoLeonardoPelotaI1 = 45.0f;
+	KeyFrame[3].manoLeonardoPelotaD2 = 45.0f;
+	KeyFrame[3].manoLeonardoPelotaI2 = 45.0f;
 
 	KeyFrame[4].piernaCaballoDD = 0.0f;
 	KeyFrame[4].piernaCaballoDI = 0.0f;
@@ -1133,6 +1221,14 @@ int main()
 	KeyFrame[4].pieLeonardoColumpioD = 40.0f;
 	KeyFrame[4].pieLeonardoColumpioI = 40.0f;
 
+	KeyFrame[4].pelotaX = 0.0f;
+	KeyFrame[4].pelotaY = 0.0f;
+	KeyFrame[4].pelotaZ = 0.0f;
+	KeyFrame[4].manoLeonardoPelotaD1 = 0.0f;
+	KeyFrame[4].manoLeonardoPelotaI1 = 0.0f;
+	KeyFrame[4].manoLeonardoPelotaD2 = 45.0f;
+	KeyFrame[4].manoLeonardoPelotaI2 = 45.0f;
+
 	KeyFrame[5].piernaCaballoDD = -45.0f;
 	KeyFrame[5].piernaCaballoDI = 0.0f;
 	KeyFrame[5].piernaCaballoTD = 30.0f;
@@ -1182,6 +1278,14 @@ int main()
 	KeyFrame[5].giroColumpio = -30.0f;
 	KeyFrame[5].pieLeonardoColumpioD = -40.0f;
 	KeyFrame[5].pieLeonardoColumpioI = -40.0f;
+
+	KeyFrame[5].pelotaX = -37.5f;
+	KeyFrame[5].pelotaY = 40.0f;
+	KeyFrame[5].pelotaZ = 0.0f;
+	KeyFrame[5].manoLeonardoPelotaD1 = 45.0f;
+	KeyFrame[5].manoLeonardoPelotaI1 = 45.0f;
+	KeyFrame[5].manoLeonardoPelotaD2 = 45.0f;
+	KeyFrame[5].manoLeonardoPelotaI2 = 45.0f;
 
 	KeyFrame[6].piernaCaballoDD = 45.0f;
 	KeyFrame[6].piernaCaballoDI = -45.0f;
@@ -1233,6 +1337,14 @@ int main()
 	KeyFrame[6].pieLeonardoColumpioD = 40.0f;
 	KeyFrame[6].pieLeonardoColumpioI = 40.0f;
 
+	KeyFrame[6].pelotaX = -75.0f;
+	KeyFrame[6].pelotaY = 0.0f;
+	KeyFrame[6].pelotaZ = 0.0f;
+	KeyFrame[6].manoLeonardoPelotaD1 = 45.0f;
+	KeyFrame[6].manoLeonardoPelotaI1 = 45.0f;
+	KeyFrame[6].manoLeonardoPelotaD2 = 0.0f;
+	KeyFrame[6].manoLeonardoPelotaI2 = 0.0f;
+
 	KeyFrame[7].piernaCaballoDD = -45.0f;
 	KeyFrame[7].piernaCaballoDI = 45.0f;
 	KeyFrame[7].piernaCaballoTD = 30.0f;
@@ -1282,6 +1394,14 @@ int main()
 	KeyFrame[7].giroColumpio = -10.0f;
 	KeyFrame[7].pieLeonardoColumpioD = -20.0f;
 	KeyFrame[7].pieLeonardoColumpioI = -20.0f;
+
+	KeyFrame[7].pelotaX = -37.5f;
+	KeyFrame[7].pelotaY = 40.0f;
+	KeyFrame[7].pelotaZ = 0.0f;
+	KeyFrame[7].manoLeonardoPelotaD1 = 45.0f;
+	KeyFrame[7].manoLeonardoPelotaI1 = 45.0f;
+	KeyFrame[7].manoLeonardoPelotaD2 = 45.0f;
+	KeyFrame[7].manoLeonardoPelotaI2 = 45.0f;
 
 	KeyFrame[8].piernaCaballoDD = -45.0f;
 	KeyFrame[8].piernaCaballoDI = -45.0f;
@@ -1333,6 +1453,14 @@ int main()
 	KeyFrame[8].pieLeonardoColumpioD = 0.0f;
 	KeyFrame[8].pieLeonardoColumpioI = 0.0f;
 
+	KeyFrame[8].pelotaX = 0.0f;
+	KeyFrame[8].pelotaY = 0.0f;
+	KeyFrame[8].pelotaZ = 0.0f;
+	KeyFrame[8].manoLeonardoPelotaD1 = 0.0f;
+	KeyFrame[8].manoLeonardoPelotaI1 = 0.0f;
+	KeyFrame[8].manoLeonardoPelotaD2 = 45.0f;
+	KeyFrame[8].manoLeonardoPelotaI2 = 45.0f;
+
 	KeyFrame[9].piernaCaballoDD = 0.0f;
 	KeyFrame[9].piernaCaballoDI = 0.0f;
 	KeyFrame[9].piernaCaballoTD = 0.0f;
@@ -1382,6 +1510,14 @@ int main()
 	KeyFrame[9].giroColumpio = 0.0f;
 	KeyFrame[9].pieLeonardoColumpioD = 0.0f;
 	KeyFrame[9].pieLeonardoColumpioI = 0.0f;
+
+	KeyFrame[9].pelotaX = 0.0f;
+	KeyFrame[9].pelotaY = 0.0f;
+	KeyFrame[9].pelotaZ = 0.0f;
+	KeyFrame[9].manoLeonardoPelotaD1 = 0.0f;
+	KeyFrame[9].manoLeonardoPelotaI1 = 0.0f;
+	KeyFrame[9].manoLeonardoPelotaD2 = 45.0f;
+	KeyFrame[9].manoLeonardoPelotaI2 = 45.0f;
 
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -1603,9 +1739,137 @@ int main()
 		resbaladilla.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-300.0f, 0.0f, 400.0f));
+		model = glm::translate(model, glm::vec3(-250.0f, 18.0f, 400.0f));
+		tmp = model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));	//Dependencia tmp
+		staticShader.setMat4("model", model);
+		leonardoIngle.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(0.0f, 12.5f, 0.1f));
+		staticShader.setMat4("model", model);
+		leonardo.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-0.1f, 1.0f, -0.5f));
+		staticShader.setMat4("model", model);
+		leonardoTorso.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-3.5f, 10.7f, -0.6f));
+		model = glm::rotate(model, glm::radians(-20.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(80.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		leonardoBrazoD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(3.5f, 10.6f, -0.5f));
+		model = glm::rotate(model, glm::radians(-20.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(-80.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		leonardoBrazoI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-4.6f, 4.0f, 2.0f));
+		model = glm::rotate(model, glm::radians(-90.0f + manoLeonardoPelotaD1), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		leonardoManoD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(4.4f, 4.0f, 2.0f));
+		model = glm::rotate(model, glm::radians(-90.0f + manoLeonardoPelotaI1), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		leonardoManoI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-2.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		leonardoPiernaD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(2.0f, 0.0f, -0.1f));
+		staticShader.setMat4("model", model);
+		leonardoPiernaI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-1.9f, -8.0f, 1.4f));
+		staticShader.setMat4("model", model);
+		leonardoPieD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(2.0f, -8.0f, -0.1f));
+		staticShader.setMat4("model", model);
+		leonardoPieI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-262.5f + pelotaX, 20.0f + pelotaY, 400.0f + pelotaZ));
 		staticShader.setMat4("model", model);
 		pelota.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-350.0f, 18.0f, 400.0f));
+		tmp = model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));	//Dependencia tmp
+		staticShader.setMat4("model", model);
+		leonardoIngle.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(0.0f, 12.5f, 0.1f));
+		staticShader.setMat4("model", model);
+		leonardo.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-0.1f, 1.0f, -0.5f));
+		staticShader.setMat4("model", model);
+		leonardoTorso.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-3.5f, 10.7f, -0.6f));
+		model = glm::rotate(model, glm::radians(-20.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(80.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		leonardoBrazoD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(3.5f, 10.6f, -0.5f));
+		model = glm::rotate(model, glm::radians(-20.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(-80.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		leonardoBrazoI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-4.6f, 4.0f, 2.0f));
+		model = glm::rotate(model, glm::radians(-90.0f + manoLeonardoPelotaD2), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		leonardoManoD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(4.4f, 4.0f, 2.0f));
+		model = glm::rotate(model, glm::radians(-90.0f + manoLeonardoPelotaI2), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		leonardoManoI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-2.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		leonardoPiernaD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(2.0f, 0.0f, -0.1f));
+		staticShader.setMat4("model", model);
+		leonardoPiernaI.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(-1.9f, -8.0f, 1.4f));
+		staticShader.setMat4("model", model);
+		leonardoPieD.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(tmp, glm::vec3(2.0f, -8.0f, -0.1f));
+		staticShader.setMat4("model", model);
+		leonardoPieI.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-27.0f, 0.0f, 230.0f));
