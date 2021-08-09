@@ -564,7 +564,7 @@ void animate(void)
 		{
 			if (recorridoAuto)
 			{
-				if (((autoZ <= 10.0f) and (autoZ > 0.0f)) and (autoX == 0.0f)) autoZ -= 1.f;
+				if (((autoZ <= 10.0f) and (autoZ > 0.0f)) and (autoX == 0.0f)) avanzaAuto = false;
 				if ((autoZ == 0.0f) and (autoX == 0.0f)) avanzaAuto = false;
 				if (((autoZ >= -10.0f) and (autoZ < 220.0f)) and ((autoX >= 0.0f) and (autoX < 20.0f)) and (giroAuto < 45.0f) and (giroLlantaAuto < 45.0f))
 				{
